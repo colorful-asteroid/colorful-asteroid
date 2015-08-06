@@ -1,0 +1,474 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'generator-angular',
+1 verbose cli   'generator-karma',
+1 verbose cli   'generator-webapp' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose install initial load of /usr/local/lib/package.json
+5 verbose readDependencies loading dependencies from /usr/local/lib/package.json
+6 silly cache add args [ 'generator-angular', null ]
+7 verbose cache add spec generator-angular
+8 silly cache add args [ 'generator-karma', null ]
+9 verbose cache add spec generator-karma
+10 silly cache add args [ 'generator-webapp', null ]
+11 verbose cache add spec generator-webapp
+12 silly cache add parsed spec { raw: 'generator-angular',
+12 silly cache add   scope: null,
+12 silly cache add   name: 'generator-angular',
+12 silly cache add   rawSpec: '',
+12 silly cache add   spec: '*',
+12 silly cache add   type: 'range' }
+13 silly addNamed generator-angular@*
+14 verbose addNamed "*" is a valid semver range for generator-angular
+15 silly addNameRange { name: 'generator-angular', range: '*', hasData: false }
+16 silly mapToRegistry name generator-angular
+17 silly mapToRegistry using default registry
+18 silly mapToRegistry registry https://registry.npmjs.org/
+19 silly mapToRegistry uri https://registry.npmjs.org/generator-angular
+20 verbose addNameRange registry:https://registry.npmjs.org/generator-angular not in flight; fetching
+21 silly cache add parsed spec { raw: 'generator-karma',
+21 silly cache add   scope: null,
+21 silly cache add   name: 'generator-karma',
+21 silly cache add   rawSpec: '',
+21 silly cache add   spec: '*',
+21 silly cache add   type: 'range' }
+22 silly addNamed generator-karma@*
+23 verbose addNamed "*" is a valid semver range for generator-karma
+24 silly addNameRange { name: 'generator-karma', range: '*', hasData: false }
+25 silly mapToRegistry name generator-karma
+26 silly mapToRegistry using default registry
+27 silly mapToRegistry registry https://registry.npmjs.org/
+28 silly mapToRegistry uri https://registry.npmjs.org/generator-karma
+29 verbose addNameRange registry:https://registry.npmjs.org/generator-karma not in flight; fetching
+30 silly cache add parsed spec { raw: 'generator-webapp',
+30 silly cache add   scope: null,
+30 silly cache add   name: 'generator-webapp',
+30 silly cache add   rawSpec: '',
+30 silly cache add   spec: '*',
+30 silly cache add   type: 'range' }
+31 silly addNamed generator-webapp@*
+32 verbose addNamed "*" is a valid semver range for generator-webapp
+33 silly addNameRange { name: 'generator-webapp', range: '*', hasData: false }
+34 silly mapToRegistry name generator-webapp
+35 silly mapToRegistry using default registry
+36 silly mapToRegistry registry https://registry.npmjs.org/
+37 silly mapToRegistry uri https://registry.npmjs.org/generator-webapp
+38 verbose addNameRange registry:https://registry.npmjs.org/generator-webapp not in flight; fetching
+39 verbose request uri https://registry.npmjs.org/generator-karma
+40 verbose request no auth needed
+41 info attempt registry request try #1 at 7:01:42 PM
+42 verbose request id 16536299190daabe
+43 verbose etag "5T2LJZOIN088ZVB6DZUQKZ23I"
+44 http request GET https://registry.npmjs.org/generator-karma
+45 verbose request uri https://registry.npmjs.org/generator-angular
+46 verbose request no auth needed
+47 info attempt registry request try #1 at 7:01:42 PM
+48 verbose etag "4QMU72STHAYSK3MIV2KE6DCD"
+49 http request GET https://registry.npmjs.org/generator-angular
+50 verbose request uri https://registry.npmjs.org/generator-webapp
+51 verbose request no auth needed
+52 info attempt registry request try #1 at 7:01:42 PM
+53 verbose etag "B9IB7UIHYL8JSC5VT35OM7S89"
+54 http request GET https://registry.npmjs.org/generator-webapp
+55 http 304 https://registry.npmjs.org/generator-webapp
+56 silly get cb [ 304,
+56 silly get   { date: 'Thu, 06 Aug 2015 02:01:43 GMT',
+56 silly get     via: '1.1 varnish',
+56 silly get     'cache-control': 'max-age=60',
+56 silly get     etag: '"B9IB7UIHYL8JSC5VT35OM7S89"',
+56 silly get     age: '20',
+56 silly get     connection: 'keep-alive',
+56 silly get     'x-served-by': 'cache-sjc3123-SJC',
+56 silly get     'x-cache': 'HIT',
+56 silly get     'x-cache-hits': '1',
+56 silly get     'x-timer': 'S1438826503.052485,VS0,VE0',
+56 silly get     vary: 'Accept' } ]
+57 verbose etag https://registry.npmjs.org/generator-webapp from cache
+58 verbose get saving generator-webapp to /Users/Martial-One/.npm/registry.npmjs.org/generator-webapp/.cache.json
+59 silly addNameRange number 2 { name: 'generator-webapp', range: '*', hasData: true }
+60 silly addNameRange versions [ 'generator-webapp',
+60 silly addNameRange   [ '0.1.0',
+60 silly addNameRange     '0.1.1',
+60 silly addNameRange     '0.1.2',
+60 silly addNameRange     '0.1.3',
+60 silly addNameRange     '0.1.4',
+60 silly addNameRange     '0.1.5',
+60 silly addNameRange     '0.1.6',
+60 silly addNameRange     '0.1.7',
+60 silly addNameRange     '0.2.0',
+60 silly addNameRange     '0.2.1',
+60 silly addNameRange     '0.2.2',
+60 silly addNameRange     '0.2.3',
+60 silly addNameRange     '0.2.4',
+60 silly addNameRange     '0.2.5',
+60 silly addNameRange     '0.2.6',
+60 silly addNameRange     '0.2.7',
+60 silly addNameRange     '0.3.0',
+60 silly addNameRange     '0.3.1',
+60 silly addNameRange     '0.4.0',
+60 silly addNameRange     '0.4.1',
+60 silly addNameRange     '0.4.2',
+60 silly addNameRange     '0.4.3',
+60 silly addNameRange     '0.4.4',
+60 silly addNameRange     '0.4.5',
+60 silly addNameRange     '0.4.6',
+60 silly addNameRange     '0.4.7',
+60 silly addNameRange     '0.4.8',
+60 silly addNameRange     '0.4.9',
+60 silly addNameRange     '0.5.0-1',
+60 silly addNameRange     '0.5.0-rc.1',
+60 silly addNameRange     '0.5.0-2',
+60 silly addNameRange     '0.5.0',
+60 silly addNameRange     '0.5.1',
+60 silly addNameRange     '0.6.0',
+60 silly addNameRange     '0.6.1',
+60 silly addNameRange     '0.6.2',
+60 silly addNameRange     '1.0.0',
+60 silly addNameRange     '1.0.1' ] ]
+61 silly addNamed generator-webapp@1.0.1
+62 verbose addNamed "1.0.1" is a plain semver version for generator-webapp
+63 silly cache afterAdd generator-webapp@1.0.1
+64 verbose afterAdd /Users/Martial-One/.npm/generator-webapp/1.0.1/package/package.json not in flight; writing
+65 http 304 https://registry.npmjs.org/generator-angular
+66 silly get cb [ 304,
+66 silly get   { date: 'Thu, 06 Aug 2015 02:01:43 GMT',
+66 silly get     via: '1.1 varnish',
+66 silly get     'cache-control': 'max-age=60',
+66 silly get     etag: '"4QMU72STHAYSK3MIV2KE6DCD"',
+66 silly get     age: '0',
+66 silly get     connection: 'keep-alive',
+66 silly get     'x-served-by': 'cache-sjc3129-SJC',
+66 silly get     'x-cache': 'HIT',
+66 silly get     'x-cache-hits': '1',
+66 silly get     'x-timer': 'S1438826503.050929,VS0,VE37',
+66 silly get     vary: 'Accept' } ]
+67 verbose etag https://registry.npmjs.org/generator-angular from cache
+68 verbose get saving generator-angular to /Users/Martial-One/.npm/registry.npmjs.org/generator-angular/.cache.json
+69 verbose afterAdd /Users/Martial-One/.npm/generator-webapp/1.0.1/package/package.json written
+70 silly addNameRange number 2 { name: 'generator-angular', range: '*', hasData: true }
+71 silly addNameRange versions [ 'generator-angular',
+71 silly addNameRange   [ '0.1.0',
+71 silly addNameRange     '0.1.1',
+71 silly addNameRange     '0.1.2',
+71 silly addNameRange     '0.1.3',
+71 silly addNameRange     '0.1.4',
+71 silly addNameRange     '0.1.5',
+71 silly addNameRange     '0.2.0',
+71 silly addNameRange     '0.2.1',
+71 silly addNameRange     '0.2.2',
+71 silly addNameRange     '0.3.0',
+71 silly addNameRange     '0.3.1',
+71 silly addNameRange     '0.4.0',
+71 silly addNameRange     '0.5.0',
+71 silly addNameRange     '0.5.1',
+71 silly addNameRange     '0.6.0-rc.1',
+71 silly addNameRange     '0.6.0-rc.2',
+71 silly addNameRange     '0.6.0',
+71 silly addNameRange     '0.7.0',
+71 silly addNameRange     '0.7.1',
+71 silly addNameRange     '0.8.0',
+71 silly addNameRange     '0.9.0-0',
+71 silly addNameRange     '0.9.0-1',
+71 silly addNameRange     '0.9.0',
+71 silly addNameRange     '0.9.1',
+71 silly addNameRange     '0.9.2',
+71 silly addNameRange     '0.9.3',
+71 silly addNameRange     '0.9.5',
+71 silly addNameRange     '0.9.6',
+71 silly addNameRange     '0.9.7',
+71 silly addNameRange     '0.9.8',
+71 silly addNameRange     '0.10.0',
+71 silly addNameRange     '0.11.0',
+71 silly addNameRange     '0.11.1',
+71 silly addNameRange     '0.12.0',
+71 silly addNameRange     '0.11.2',
+71 silly addNameRange     '0.12.1' ] ]
+72 silly addNamed generator-angular@0.12.1
+73 verbose addNamed "0.12.1" is a plain semver version for generator-angular
+74 silly cache afterAdd generator-angular@0.12.1
+75 verbose afterAdd /Users/Martial-One/.npm/generator-angular/0.12.1/package/package.json not in flight; writing
+76 verbose afterAdd /Users/Martial-One/.npm/generator-angular/0.12.1/package/package.json written
+77 http 304 https://registry.npmjs.org/generator-karma
+78 silly get cb [ 304,
+78 silly get   { date: 'Thu, 06 Aug 2015 02:01:43 GMT',
+78 silly get     via: '1.1 varnish',
+78 silly get     'cache-control': 'max-age=60',
+78 silly get     etag: '"5T2LJZOIN088ZVB6DZUQKZ23I"',
+78 silly get     age: '0',
+78 silly get     connection: 'keep-alive',
+78 silly get     'x-served-by': 'cache-sjc3128-SJC',
+78 silly get     'x-cache': 'MISS',
+78 silly get     'x-cache-hits': '0',
+78 silly get     'x-timer': 'S1438826503.055875,VS0,VE84',
+78 silly get     vary: 'Accept' } ]
+79 verbose etag https://registry.npmjs.org/generator-karma from cache
+80 verbose get saving generator-karma to /Users/Martial-One/.npm/registry.npmjs.org/generator-karma/.cache.json
+81 silly addNameRange number 2 { name: 'generator-karma', range: '*', hasData: true }
+82 silly addNameRange versions [ 'generator-karma',
+82 silly addNameRange   [ '0.1.1',
+82 silly addNameRange     '0.2.0',
+82 silly addNameRange     '0.3.0',
+82 silly addNameRange     '0.3.1',
+82 silly addNameRange     '0.4.1',
+82 silly addNameRange     '0.5.0',
+82 silly addNameRange     '0.6.0',
+82 silly addNameRange     '0.7.0',
+82 silly addNameRange     '0.8.0',
+82 silly addNameRange     '0.8.1',
+82 silly addNameRange     '0.8.2',
+82 silly addNameRange     '0.8.3',
+82 silly addNameRange     '0.9.0',
+82 silly addNameRange     '1.0.0' ] ]
+83 silly addNamed generator-karma@1.0.0
+84 verbose addNamed "1.0.0" is a plain semver version for generator-karma
+85 silly cache afterAdd generator-karma@1.0.0
+86 verbose afterAdd /Users/Martial-One/.npm/generator-karma/1.0.0/package/package.json not in flight; writing
+87 verbose afterAdd /Users/Martial-One/.npm/generator-karma/1.0.0/package/package.json written
+88 silly install resolved [ { name: 'generator-webapp',
+88 silly install resolved     version: '1.0.1',
+88 silly install resolved     description: 'Scaffold out a front-end web app',
+88 silly install resolved     license: 'BSD',
+88 silly install resolved     repository:
+88 silly install resolved      { type: 'git',
+88 silly install resolved        url: 'git+https://github.com/yeoman/generator-webapp.git' },
+88 silly install resolved     author: { name: 'Yeoman' },
+88 silly install resolved     main: 'app/index.js',
+88 silly install resolved     scripts: { test: 'mocha --reporter spec' },
+88 silly install resolved     files: [ 'app' ],
+88 silly install resolved     keywords:
+88 silly install resolved      [ 'yeoman-generator',
+88 silly install resolved        'web',
+88 silly install resolved        'app',
+88 silly install resolved        'front-end',
+88 silly install resolved        'h5bp',
+88 silly install resolved        'modernizr',
+88 silly install resolved        'jquery',
+88 silly install resolved        'grunt' ],
+88 silly install resolved     dependencies:
+88 silly install resolved      { chalk: '^1.0.0',
+88 silly install resolved        'generator-jasmine': '^0.2.0',
+88 silly install resolved        'generator-mocha': '^0.2.0',
+88 silly install resolved        mkdirp: '^0.5.1',
+88 silly install resolved        'underscore.string': '^3.1.1',
+88 silly install resolved        wiredep: '^2.2.2',
+88 silly install resolved        'yeoman-generator': '^0.20.1',
+88 silly install resolved        yosay: '^1.0.4' },
+88 silly install resolved     devDependencies: { 'grunt-cli': '^0.1.13', mocha: '*', 'yeoman-assert': '^2.0.0' },
+88 silly install resolved     gitHead: '79b524e1dea218f79225cdd656f8bd8b099840a0',
+88 silly install resolved     bugs: { url: 'https://github.com/yeoman/generator-webapp/issues' },
+88 silly install resolved     homepage: 'https://github.com/yeoman/generator-webapp#readme',
+88 silly install resolved     _id: 'generator-webapp@1.0.1',
+88 silly install resolved     _shasum: '00d92be01f6da8b52ef578ca150255735eac40f5',
+88 silly install resolved     _from: 'generator-webapp@*',
+88 silly install resolved     _npmVersion: '2.9.1',
+88 silly install resolved     _nodeVersion: '0.12.3',
+88 silly install resolved     _npmUser: { name: 'silvenon', email: 'matija.marohnic@gmail.com' },
+88 silly install resolved     dist:
+88 silly install resolved      { shasum: '00d92be01f6da8b52ef578ca150255735eac40f5',
+88 silly install resolved        tarball: 'http://registry.npmjs.org/generator-webapp/-/generator-webapp-1.0.1.tgz' },
+88 silly install resolved     maintainers:
+88 silly install resolved      [ [Object],
+88 silly install resolved        [Object],
+88 silly install resolved        [Object],
+88 silly install resolved        [Object],
+88 silly install resolved        [Object],
+88 silly install resolved        [Object],
+88 silly install resolved        [Object] ],
+88 silly install resolved     directories: {},
+88 silly install resolved     _resolved: 'https://registry.npmjs.org/generator-webapp/-/generator-webapp-1.0.1.tgz',
+88 silly install resolved     readme: 'ERROR: No README data found!' },
+88 silly install resolved   { name: 'generator-angular',
+88 silly install resolved     version: '0.12.1',
+88 silly install resolved     description: 'Yeoman generator for AngularJS',
+88 silly install resolved     keywords:
+88 silly install resolved      [ 'yeoman-generator',
+88 silly install resolved        'scaffold',
+88 silly install resolved        'framework',
+88 silly install resolved        'component',
+88 silly install resolved        'front-end',
+88 silly install resolved        'app',
+88 silly install resolved        'angular' ],
+88 silly install resolved     author: { name: 'The Yeoman Team' },
+88 silly install resolved     main: 'app/index.js',
+88 silly install resolved     files:
+88 silly install resolved      [ 'app',
+88 silly install resolved        'common',
+88 silly install resolved        'constant',
+88 silly install resolved        'controller',
+88 silly install resolved        'decorator',
+88 silly install resolved        'directive',
+88 silly install resolved        'factory',
+88 silly install resolved        'filter',
+88 silly install resolved        'main',
+88 silly install resolved        'provider',
+88 silly install resolved        'route',
+88 silly install resolved        'service',
+88 silly install resolved        'templates',
+88 silly install resolved        'value',
+88 silly install resolved        'view',
+88 silly install resolved        'script-base.js',
+88 silly install resolved        'util.js' ],
+88 silly install resolved     repository:
+88 silly install resolved      { type: 'git',
+88 silly install resolved        url: 'git+https://github.com/yeoman/generator-angular.git' },
+88 silly install resolved     scripts: { test: 'mocha' },
+88 silly install resolved     dependencies:
+88 silly install resolved      { chalk: '^1.0.0',
+88 silly install resolved        wiredep: '^2.2.0',
+88 silly install resolved        'yeoman-generator': '^0.16.0',
+88 silly install resolved        yosay: '^1.0.2' },
+88 silly install resolved     peerDependencies: { 'generator-karma': '>=0.9.0' },
+88 silly install resolved     devDependencies:
+88 silly install resolved      { grunt: '^0.4.5',
+88 silly install resolved        'grunt-contrib-jshint': '^0.11.0',
+88 silly install resolved        'grunt-conventional-changelog': '^1.1.0',
+88 silly install resolved        'grunt-release': '^0.11.0',
+88 silly install resolved        'load-grunt-tasks': '^3.1.0',
+88 silly install resolved        mocha: '*',
+88 silly install resolved        semver: '^4.3.0',
+88 silly install resolved        'underscore.string': '^3.0.3' },
+88 silly install resolved     engines: { node: '>=0.10.0' },
+88 silly install resolved     licenses: [ [Object] ],
+88 silly install resolved     gitHead: 'd1ffc21e8bd2978a8a198205293b97e4a1faec25',
+88 silly install resolved     bugs: { url: 'https://github.com/yeoman/generator-angular/issues' },
+88 silly install resolved     homepage: 'https://github.com/yeoman/generator-angular#readme',
+88 silly install resolved     _id: 'generator-angular@0.12.1',
+88 silly install resolved     _shasum: '3a8775464cfbac132c563b5229306dfbb7b777aa',
+88 silly install resolved     _from: 'generator-angular@*',
+88 silly install resolved     _npmVersion: '2.11.2',
+88 silly install resolved     _nodeVersion: '0.12.5',
+88 silly install resolved     _npmUser: { name: 'eddiemonge', email: 'eddie+npm@eddiemonge.com' },
+88 silly install resolved     maintainers:
+88 silly install resolved      [ [Object],
+88 silly install resolved        [Object],
+88 silly install resolved        [Object],
+88 silly install resolved        [Object],
+88 silly install resolved        [Object],
+88 silly install resolved        [Object],
+88 silly install resolved        [Object] ],
+88 silly install resolved     dist:
+88 silly install resolved      { shasum: '3a8775464cfbac132c563b5229306dfbb7b777aa',
+88 silly install resolved        tarball: 'http://registry.npmjs.org/generator-angular/-/generator-angular-0.12.1.tgz' },
+88 silly install resolved     directories: {},
+88 silly install resolved     _resolved: 'https://registry.npmjs.org/generator-angular/-/generator-angular-0.12.1.tgz',
+88 silly install resolved     readme: 'ERROR: No README data found!' },
+88 silly install resolved   { name: 'generator-karma',
+88 silly install resolved     version: '1.0.0',
+88 silly install resolved     description: 'Yeoman generator for Karma',
+88 silly install resolved     license: 'BSD',
+88 silly install resolved     main: 'app/index.js',
+88 silly install resolved     repository:
+88 silly install resolved      { type: 'git',
+88 silly install resolved        url: 'git+https://github.com/yeoman/generator-karma.git' },
+88 silly install resolved     author: { name: 'The Yeoman Team' },
+88 silly install resolved     engines: { node: '>=0.10.0', npm: '>=1.2.10' },
+88 silly install resolved     scripts: { test: 'mocha --reporter spec' },
+88 silly install resolved     files: [ 'app', 'templates' ],
+88 silly install resolved     keywords: [ 'yeoman-generator', 'scaffold', 'test', 'runner', 'karma' ],
+88 silly install resolved     dependencies:
+88 silly install resolved      { underscore: '^1.6.0',
+88 silly install resolved        'yeoman-generator': '^0.19.1',
+88 silly install resolved        'sorted-object': '~1.0.0' },
+88 silly install resolved     devDependencies: { mocha: '*' },
+88 silly install resolved     peerDependencies: { yo: '>=1.0.0' },
+88 silly install resolved     gitHead: 'cdc0a4a7c0ee3128e0ae5482faabf7cf2c22e4f0',
+88 silly install resolved     bugs: { url: 'https://github.com/yeoman/generator-karma/issues' },
+88 silly install resolved     homepage: 'https://github.com/yeoman/generator-karma',
+88 silly install resolved     _id: 'generator-karma@1.0.0',
+88 silly install resolved     _shasum: '43f909c1677c66598d0acb126694a12d3175f8ad',
+88 silly install resolved     _from: 'generator-karma@*',
+88 silly install resolved     _npmVersion: '2.5.1',
+88 silly install resolved     _nodeVersion: '0.10.32',
+88 silly install resolved     _npmUser: { name: 'sboudrias', email: 'admin@simonboudrias.com' },
+88 silly install resolved     maintainers:
+88 silly install resolved      [ [Object],
+88 silly install resolved        [Object],
+88 silly install resolved        [Object],
+88 silly install resolved        [Object],
+88 silly install resolved        [Object],
+88 silly install resolved        [Object],
+88 silly install resolved        [Object] ],
+88 silly install resolved     dist:
+88 silly install resolved      { shasum: '43f909c1677c66598d0acb126694a12d3175f8ad',
+88 silly install resolved        tarball: 'http://registry.npmjs.org/generator-karma/-/generator-karma-1.0.0.tgz' },
+88 silly install resolved     directories: {},
+88 silly install resolved     _resolved: 'https://registry.npmjs.org/generator-karma/-/generator-karma-1.0.0.tgz',
+88 silly install resolved     readme: 'ERROR: No README data found!' } ]
+89 info install generator-webapp@1.0.1 into /usr/local/lib
+90 info install generator-angular@0.12.1 into /usr/local/lib
+91 info install generator-karma@1.0.0 into /usr/local/lib
+92 info installOne generator-webapp@1.0.1
+93 verbose installOne of generator-webapp to /usr/local/lib not in flight; installing
+94 info installOne generator-angular@0.12.1
+95 verbose installOne of generator-angular to /usr/local/lib not in flight; installing
+96 info installOne generator-karma@1.0.0
+97 verbose installOne of generator-karma to /usr/local/lib not in flight; installing
+98 verbose lock using /Users/Martial-One/.npm/_locks/generator-webapp-9b485c3ef99446bb.lock for /usr/local/lib/node_modules/generator-webapp
+99 verbose lock using /Users/Martial-One/.npm/_locks/generator-angular-8c05db5f74b13054.lock for /usr/local/lib/node_modules/generator-angular
+100 verbose lock using /Users/Martial-One/.npm/_locks/generator-karma-86430db65453f6e8.lock for /usr/local/lib/node_modules/generator-karma
+101 silly install write writing generator-webapp 1.0.1 to /usr/local/lib/node_modules/generator-webapp
+102 silly install write writing generator-angular 0.12.1 to /usr/local/lib/node_modules/generator-angular
+103 silly install write writing generator-karma 1.0.0 to /usr/local/lib/node_modules/generator-karma
+104 verbose unbuild lib/node_modules/generator-webapp
+105 verbose unbuild lib/node_modules/generator-angular
+106 verbose unbuild lib/node_modules/generator-karma
+107 info preuninstall generator-webapp@1.0.1
+108 info uninstall generator-webapp@1.0.1
+109 verbose unbuild rmStuff generator-webapp@1.0.1 from /usr/local/lib/node_modules
+110 info postuninstall generator-webapp@1.0.1
+111 info preuninstall generator-angular@0.12.1
+112 silly gentlyRm /usr/local/lib/node_modules/generator-webapp is being purged from base /usr/local
+113 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/generator-webapp
+114 info preuninstall generator-karma@1.0.0
+115 info uninstall generator-angular@0.12.1
+116 silly vacuum-fs purging /usr/local/lib/node_modules/generator-webapp
+117 info uninstall generator-karma@1.0.0
+118 verbose unbuild rmStuff generator-angular@0.12.1 from /usr/local/lib/node_modules
+119 info postuninstall generator-angular@0.12.1
+120 verbose unlock done using /Users/Martial-One/.npm/_locks/generator-webapp-9b485c3ef99446bb.lock for /usr/local/lib/node_modules/generator-webapp
+121 verbose unbuild rmStuff generator-karma@1.0.0 from /usr/local/lib/node_modules
+122 info postuninstall generator-karma@1.0.0
+123 silly gentlyRm /usr/local/lib/node_modules/generator-angular is being purged from base /usr/local
+124 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/generator-angular
+125 silly vacuum-fs purging /usr/local/lib/node_modules/generator-angular
+126 silly gentlyRm /usr/local/lib/node_modules/generator-karma is being purged from base /usr/local
+127 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/generator-karma
+128 silly vacuum-fs purging /usr/local/lib/node_modules/generator-karma
+129 verbose unlock done using /Users/Martial-One/.npm/_locks/generator-angular-8c05db5f74b13054.lock for /usr/local/lib/node_modules/generator-angular
+130 verbose unlock done using /Users/Martial-One/.npm/_locks/generator-karma-86430db65453f6e8.lock for /usr/local/lib/node_modules/generator-karma
+131 verbose stack Error: EACCES, rmdir '/usr/local/lib/node_modules/generator-webapp'
+131 verbose stack     at Error (native)
+132 verbose cwd /Users/Martial-One/Desktop/Coding/TGA/colorful-asteroids/mytodo
+133 error Darwin 14.4.0
+134 error argv "node" "/usr/local/bin/npm" "install" "-g" "generator-angular" "generator-karma" "generator-webapp"
+135 error node v0.12.7
+136 error npm  v2.11.3
+137 error path /usr/local/lib/node_modules/generator-webapp
+138 error code EACCES
+139 error errno -13
+140 error Error: EACCES, rmdir '/usr/local/lib/node_modules/generator-webapp'
+140 error     at Error (native)
+140 error  { [Error: EACCES, rmdir '/usr/local/lib/node_modules/generator-webapp']
+140 error   errno: -13,
+140 error   code: 'EACCES',
+140 error   path: '/usr/local/lib/node_modules/generator-webapp' }
+141 error Please try running this command again as root/Administrator.
+142 verbose exit [ -13, true ]
+143 verbose unbuild lib/node_modules/generator-webapp
+144 info preuninstall generator-webapp@1.0.1
+145 info uninstall generator-webapp@1.0.1
+146 verbose unbuild rmStuff generator-webapp@1.0.1 from /usr/local/lib/node_modules
+147 info postuninstall generator-webapp@1.0.1
+148 silly gentlyRm /usr/local/lib/node_modules/generator-webapp is being purged from base /usr/local
+149 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/generator-webapp
+150 silly vacuum-fs purging /usr/local/lib/node_modules/generator-webapp
+151 error error rolling back Error: EACCES, rmdir '/usr/local/lib/node_modules/generator-webapp'
+151 error error rolling back     at Error (native)
+151 error error rolling back  { [Error: EACCES, rmdir '/usr/local/lib/node_modules/generator-webapp']
+151 error error rolling back   errno: -13,
+151 error error rolling back   code: 'EACCES',
+151 error error rolling back   path: '/usr/local/lib/node_modules/generator-webapp' }

@@ -40,3 +40,13 @@ Visit www.colorful-asteroid.com, and create a survey. Both organizers and partic
 
 ## Closing and Call to Action ##
 Improve your feedback process today with Colorful-Asteroid!
+
+## Yeoman Workflow ##
+- Clone and cd into the repo
+  From the command line:
+  - `$ npm install`
+  - `$ bower install`
+  - `$ grunt serve` (to test that everything is working)
+
+Docs:
+  - http://yeoman.io/codelab/write-app.html
