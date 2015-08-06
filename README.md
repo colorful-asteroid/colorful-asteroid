@@ -52,7 +52,9 @@ Improve your feedback process today with Colorful-Asteroid!
   Install modules From the command line:
   - `$ npm install`
   - `$ bower install`
-  - `$ grunt serve` (to test that everything is working)
+  - `$ grunt -f (to test that everything is working)
+
+- Open browser window navigate to http://localhost:9999/
 
 Docs:
   - http://yeoman.io/codelab/write-app.html
