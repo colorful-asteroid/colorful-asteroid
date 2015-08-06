@@ -49,7 +49,10 @@ Improve your feedback process today with Colorful-Asteroid!
   - `$ brew install postgres`
   - `$ postgres -D /usr/local/var/postgres`
 
-  Install modules From the command line:
+- Docs:
+  - https://www.codefellows.org/blog/three-battle-tested-ways-to-install-postgresql
+
+  Install module and dependencies from the command line:
   - `$ npm install`
   - `$ bower install`
   - `$ grunt -f (to test that everything is working)
