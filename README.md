@@ -42,8 +42,14 @@ Visit www.colorful-asteroid.com, and create a survey. Both organizers and partic
 Improve your feedback process today with Colorful-Asteroid!
 
 ## Yeoman Workflow ##
-- Clone and cd into the repo
-  From the command line:
+- Clone and cd into the rep
+
+  Install Postgres:
+  - `$ brew update`
+  - `$ brew install postgres`
+  - `$ postgres -D /usr/local/var/postgres`
+
+  Install modules From the command line:
   - `$ npm install`
   - `$ bower install`
   - `$ grunt serve` (to test that everything is working)
