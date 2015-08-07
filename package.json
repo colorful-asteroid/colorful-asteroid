@@ -18,6 +18,7 @@
   "homepage": "https://github.com/colorful-asteroid/colorful-asteroid",
   "dependencies": {
     "express": "^4.13.3",
+    "pg": "^4.4.1",
     "serve-static": "^1.10.0"
   }
 }
