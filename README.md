@@ -1,4 +1,4 @@
-# Colorful-Asteroid #
+# Reflectiv #
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -33,10 +33,9 @@ With -product-'s easy to use interface, people can rapidly leave feedback, that 
   >  ¯\_(ツ)_/¯ ~Moose
 
 ## How to Get Started ##
-Visit www.colorful-asteroid.com, and create a survey. Both organizers and participants can add topics to the survey. Once finalized, participants can give each item a score and leave brief feedback. Organizers can go over and export feedback.
+Visit www.reflectiv.futbol, and create a survey. Both organizers and participants can add topics to the survey. Once finalized, participants can give each item a score and leave brief feedback. Organizers can go over and export feedback.
 
 ## Customer Quote ##
   > This process was a great improvement. I'm much more comfortable leaving feedback now.
 
-## Closing and Call to Action ##
-Improve your feedback process today with Colorful-Asteroid!
+### Improve your feedback process today with Reflectiv! ###
