@@ -1,4 +1,17 @@
-angular.module('reflectiv', [])
+angular.module('reflectiv', ['ngRoute'])
+  .config(function($routeProvider, $locationProvider){
+    console.log($locationProvider);
+    $routeProvider
+      .when('/', {
+        controller: 'TopicsController',
+        templateURL: 'views/start.html'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  })
+  
+  
   .controller('TopicsController', function(){
     var topicsList = this;
     topicsList.topics = [
