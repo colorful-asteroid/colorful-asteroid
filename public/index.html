@@ -1,26 +1,17 @@
 <!doctype html>
-<html ng-app="topicsApp">
+<html ng-app="reflectiv">
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-    <script src="topic.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>REFLECTIV</title>
   </head>
 
   <body>
-    <header>REFLECTIV</header>
-    <div ng-controller="TopicsController as topicsList">
-      <form ng-submit="topicsList.addTopic()" class="topicForm"> 
-        <input type="text" ng-model="topicsList.topicText" placeholder="Enter a topic you want to discuss">
-        <input class="btn-primary" type="submit" value="add">
-      </form>
-    
-      <ul>
-        <li ng-repeat="topic in topicsList.topics">
-         {{topic.text}} 
-        </li>
-      </ul>
-    </div>
-  
+    <header><a href="/">REFLECTIV</a></header>
+    <div ng-view></div>  
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-resource.min.js"></script> 
+    <script src="reflectiv.js"></script>
+
   </body>
 </html>

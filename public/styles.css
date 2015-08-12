@@ -10,7 +10,8 @@ header {
 
 body {
   font-family: "Arial Black";
-  background-color: #313131;
+  background-color: white;
+  text-align: center;
 }
 
 .topicForm {
@@ -19,4 +20,38 @@ body {
   margin: 0 auto;
   text-align: center;
   font-weight: 900;
+}
+
+.cta {
+  width:250px;
+  height:100px;
+  line-height:100px;
+  margin: 0 auto;
+  background-color:#6C05C4;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 40px;
+  cursor: pointer; 
+}
+
+.cta:hover {
+  background-color:#AB56F5;
+}
+
+li{
+  list-style: none;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #D4D4D4;
+  border-radius: 5px;
+  font-size: 25px;
+}
+
+ul {
+  padding:0;
+}
+
+.slider {
+  width: 250px;
 }
