@@ -1,17 +1,18 @@
 <!doctype html>
-<html ng-app="reflectiv">
+<html>
   <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>REFLECTIV</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
 
-  <body>
-    <header><a href="/">REFLECTIV</a></header>
-    <div ng-view></div>  
+  <body ng-app="Reflectiv">
+    <header>REFLECTIV</header>
+    <a href="#topic">topic</a>
+    <div ng-view></div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.min.js"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-resource.min.js"></script> 
-    <script src="reflectiv.js"></script>
-
+    <script src="reflectiv.js">
+    </script>
+  
   </body>
 </html>

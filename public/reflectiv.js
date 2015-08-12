@@ -1,18 +1,14 @@
-angular.module('reflectiv', ['ngRoute'])
-  .config(function($routeProvider, $locationProvider){
-    console.log($locationProvider);
+angular.module('Reflectiv', ['ngRoute'])
+  .config( [ '$routeProvider', function($routeProvider){
     $routeProvider
       .when('/', {
-        controller: 'TopicsController',
-        templateURL: 'views/start.html'
+        templateUrl: 'start.html'
       })
-      .otherwise({
-        redirectTo: '/'
+      .when('/topic', {
+        templateUrl: 'topic.html'
       });
-  })
-  
-  
-  .controller('TopicsController', function(){
+  }])
+.controller('TopicsController', function(){
     var topicsList = this;
     topicsList.topics = [
       {text: 'REFLECTIV KICKS ASS'}
