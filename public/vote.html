@@ -1,24 +1,16 @@
-<!doctype html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="../styles.css">
-  </head>
-  <body>
-    <div>
-      <center>
-        <form>
-          <ul>
-            <li ng-repeat="item in itemsList">
-              {{item.topic}}
-              <div></div>
-              <input class="slider" type="range" min="0" max="100" step="5" name="dislike/like" /> 
-              <div></div>
-              <textarea name="comment" cols="40" rows="3" maxlength="140" placeholder="Enter a public comment (optional)"></textarea>
-            </li>
-          </ul>
-          <div class="cta">SUBMIT</div>  
-        </form>
-      </center>
-    </div
-  </body>
-</html>
+<div>
+  <center ng-controller="VotesController as votesList">
+    <form>
+      <ul>
+        <li ng-repeat="item in votesList.votes">
+          {{item.topic}}
+          <div></div>
+          <input class="slider" type="range" min="0" max="100" step="5" name="dislike/like" /> 
+          <div></div>
+          <textarea name="comment" cols="40" rows="3" maxlength="140" placeholder="Enter a public comment (optional)"></textarea>
+        </li>
+      </ul>
+      <div class="cta">SUBMIT</div>  
+    </form>
+  </center>
+</div

@@ -1,4 +1,8 @@
 angular.module('Reflectiv', ['ngRoute'])
+  .service('Sprint', function(){
+    return {/*table: Math.random().toString(36).substring(7)*/};
+      
+})
   .config( [ '$routeProvider', function($routeProvider){
     $routeProvider
       .when('/', {
@@ -7,12 +11,13 @@ angular.module('Reflectiv', ['ngRoute'])
       .when('/leader', {
         templateUrl: 'leader.html'
       })
-      .when('/topic', {
-        templateUrl: 'topic.html'
-      })
       .when('/topic/:id', {
         templateUrl: 'topic.html'
+      })
+      .when('/topic/:id/vote', {
+        templateUrl: 'vote.html'
       });
+
   }])
   .controller('LeaderController', function($scope){
     // Gather input from user
@@ -24,18 +29,25 @@ angular.module('Reflectiv', ['ngRoute'])
     // Make post request with DB
     };
   })
-  .controller('TopicsController', function($scope, $location){
+  .controller('TopicsController', function($scope, $location, Sprint){
     var topicsList = this;
     topicsList.topics = [
       {text: 'REFLECTIV KICKS ASS'}
     ];
+
     topicsList.create = function(){
-      $location.path('/topic/yolo');
+    Sprint.table = Math.random().toString(36).substring(7) ;
+    $location.path('/topic/' + Sprint.table);
       //$scope.$apply();
     };
+
     topicsList.addTopic = function(){
       topicsList.topics.push({text: topicsList.topicText});
       topicsList.topicText = '';
+    };
+
+    topicsList.startVote = function(){
+      $location.path('/topic/' + Sprint.table + '/vote');
     };
   })
   .controller('VotesController', function(){
