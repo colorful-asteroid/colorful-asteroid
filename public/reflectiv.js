@@ -1,4 +1,8 @@
 angular.module('Reflectiv', ['ngRoute'])
+  .service('Sprint', function(){
+    return {};
+      
+})
   .config( [ '$routeProvider', function($routeProvider){
     $routeProvider
       .when('/', {
@@ -7,12 +11,13 @@ angular.module('Reflectiv', ['ngRoute'])
       .when('/leader', {
         templateUrl: 'leader.html'
       })
-      .when('/topic', {
-        templateUrl: 'topic.html'
-      })
       .when('/topic/:id', {
         templateUrl: 'topic.html'
+      })
+      .when('/topic/:id/vote', {
+        templateUrl: 'vote.html'
       });
+
   }])
   .controller('LeaderController', function($scope){
     // Gather input from user
@@ -24,27 +29,32 @@ angular.module('Reflectiv', ['ngRoute'])
     // Make post request with DB
     };
   })
-  .controller('TopicsController', function($scope, $location){
+  .controller('TopicsController', function($location, Sprint){
     var topicsList = this;
     topicsList.topics = [
-      {text: 'REFLECTIV KICKS ASS'}
+      {text: 'HOW COOL IS REFLECTIV?'}
     ];
+
     topicsList.create = function(){
-      $location.path('/topic/yolo');
-      //$scope.$apply();
+    Sprint.table = Math.random().toString(36).substring(7) ;
+    $location.path('/topic/' + Sprint.table);
     };
+
     topicsList.addTopic = function(){
       topicsList.topics.push({text: topicsList.topicText});
       topicsList.topicText = '';
     };
+
+    topicsList.startVote = function(){
+      // needs to store all items voted on in database
+      $location.path('/topic/' + Sprint.table + '/vote');
+    };
   })
   .controller('VotesController', function(){
     var votesList = this;
-    votesList.votes = [
-      { topic: 'How cool is reflectiv?',
-        warmth: '100',
-        comment: 'it\'s probably the coolest project ever'
-      }
+    votesList.topics = [
+      { topic: 'How cool is reflectiv?'},
+      { topic: 'How cool is TGA?'}
     ];
     votesList.addVotes = function(){
       //receive list of all iems voted on
