@@ -2,7 +2,7 @@
   <center ng-controller="VotesController as votesList">
     <form>
       <ul>
-        <li ng-repeat="item in votesList.votes">
+        <li ng-repeat="item in votesList.topics">
           {{item.topic}}
           <div></div>
           <input class="slider" type="range" min="0" max="100" step="5" name="dislike/like" /> 

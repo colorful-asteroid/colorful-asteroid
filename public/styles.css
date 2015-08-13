@@ -41,11 +41,12 @@ body {
 li{
   list-style: none;
   width: 500px;
-  margin: 0 auto;
+  margin: 20px auto;
   text-align: center;
   background-color: #D4D4D4;
   border-radius: 5px;
   font-size: 25px;
+  padding: 10px;
 }
 
 ul {

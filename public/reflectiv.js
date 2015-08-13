@@ -1,6 +1,6 @@
 angular.module('Reflectiv', ['ngRoute'])
   .service('Sprint', function(){
-    return {/*table: Math.random().toString(36).substring(7)*/};
+    return {};
       
 })
   .config( [ '$routeProvider', function($routeProvider){
@@ -29,16 +29,15 @@ angular.module('Reflectiv', ['ngRoute'])
     // Make post request with DB
     };
   })
-  .controller('TopicsController', function($scope, $location, Sprint){
+  .controller('TopicsController', function($location, Sprint){
     var topicsList = this;
     topicsList.topics = [
-      {text: 'REFLECTIV KICKS ASS'}
+      {text: 'HOW COOL IS REFLECTIV?'}
     ];
 
     topicsList.create = function(){
     Sprint.table = Math.random().toString(36).substring(7) ;
     $location.path('/topic/' + Sprint.table);
-      //$scope.$apply();
     };
 
     topicsList.addTopic = function(){
@@ -47,16 +46,15 @@ angular.module('Reflectiv', ['ngRoute'])
     };
 
     topicsList.startVote = function(){
+      // needs to store all items voted on in database
       $location.path('/topic/' + Sprint.table + '/vote');
     };
   })
   .controller('VotesController', function(){
     var votesList = this;
-    votesList.votes = [
-      { topic: 'How cool is reflectiv?',
-        warmth: '100',
-        comment: 'it\'s probably the coolest project ever'
-      }
+    votesList.topics = [
+      { topic: 'How cool is reflectiv?'},
+      { topic: 'How cool is TGA?'}
     ];
     votesList.addVotes = function(){
       //receive list of all iems voted on
