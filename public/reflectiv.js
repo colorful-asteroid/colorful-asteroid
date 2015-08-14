@@ -29,7 +29,7 @@ angular.module('Reflectiv', ['ngRoute'])
     // Make post request with DB
   };
 })
-.controller('TopicsController', function($location, Sprint){
+.controller('TopicsController', function($location, $http, Sprint){
   var topicsList = this;
   topicsList.topics = [
   {text: 'HOW COOL IS REFLECTIV?'}
@@ -42,6 +42,17 @@ angular.module('Reflectiv', ['ngRoute'])
 
   topicsList.addTopic = function(){
     topicsList.topics.push({text: topicsList.topicText});
+
+    $http.post('/api/vote', {msg:'hello word!'})
+    // first function is callback on success
+    .then(function(response) {
+      console.log('successfully submitted');
+    }, 
+    // second function is callback on error
+    function(response) {
+      console.log('you have an error in your post request');
+    });
+
     topicsList.topicText = '';
   };
 
@@ -56,11 +67,13 @@ angular.module('Reflectiv', ['ngRoute'])
     //   { topic: 'How cool is reflectiv?'},
     //   { topic: 'How cool is TGA?'}
     // ];
-    votesList.topics = $http.get('/api/test')
+    votesList.topics = $http.get('/api/vote')
+    // first function is callback on succcess
     .then(function(response){
       votesList.topics = response.data;
-      console.log('****************', votesList.topics);
-    }, function(response) {
+    }, 
+    // second function is callback on error
+    function(response) {
       console.log('you have an error');
     });
 

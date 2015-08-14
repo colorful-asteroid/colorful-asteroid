@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/colorful-asteroid/colorful-asteroid",
   "dependencies": {
+    "body-parser": "^1.13.3",
     "express": "^4.13.3",
     "highcharts": "0.0.8",
     "morgan": "^1.6.1",
