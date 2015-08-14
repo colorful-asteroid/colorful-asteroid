@@ -31,9 +31,17 @@ angular.module('Reflectiv', ['ngRoute'])
 })
 .controller('TopicsController', function($location, $http, Sprint){
   var topicsList = this;
-  topicsList.topics = [
-  {text: 'HOW COOL IS REFLECTIV?'}
-  ];
+
+  // Retrieve the list of already submitted votes when the topics page is accessed
+  topicsList.topics = $http.get('/api/vote')
+  // first function is callback on succcess
+  .then(function(response){
+    topicsList.topics = response.data;
+  }, 
+  // second function is callback on error
+  function(response) {
+    console.log('you have an error');
+  });
 
   topicsList.create = function(){
     Sprint.table = Math.random().toString(36).substring(7) ;
@@ -41,12 +49,10 @@ angular.module('Reflectiv', ['ngRoute'])
   };
 
   topicsList.addTopic = function(){
-    topicsList.topics.push({text: topicsList.topicText});
-
-    $http.post('/api/vote', {msg:'hello word!'})
+    $http.post('/api/vote', {text: topicsList.topicText})
     // first function is callback on success
     .then(function(response) {
-      console.log('successfully submitted');
+      topicsList.topics = response.data;
     }, 
     // second function is callback on error
     function(response) {
