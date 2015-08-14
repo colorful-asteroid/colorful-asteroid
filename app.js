@@ -6,6 +6,8 @@ morgan = require('morgan');
 
 var app = express();
 
+var port = process.env.PORT || 8081;
+
 //sets the root directory to public
 app.use(express.static(__dirname + '/public')); //sets the root directory to public
 
@@ -32,4 +34,4 @@ app.get('/api/test', function(req, res){
 });
 
 // Describes the port we're listening on. Go to 'localhost:3000' in browser
-var server = app.listen(3000);
+var server = app.listen(port);
