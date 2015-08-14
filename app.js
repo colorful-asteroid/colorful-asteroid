@@ -6,6 +6,9 @@ morgan = require('morgan');
 
 var app = express();
 
+// Listen for an environment port, else use 8081 (probably redundant)
+var port = process.env.PORT || 3000;
+
 //sets the root directory to public
 app.use(express.static(__dirname + '/public')); //sets the root directory to public
 
@@ -32,4 +35,4 @@ app.get('/api/test', function(req, res){
 });
 
 // Describes the port we're listening on. Go to 'localhost:3000' in browser
-var server = app.listen(3000);
+var server = app.listen(port);
