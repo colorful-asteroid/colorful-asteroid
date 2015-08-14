@@ -6,7 +6,8 @@ morgan = require('morgan');
 
 var app = express();
 
-var port = process.env.PORT || 8081;
+// Listen for an environment port, else use 8081 (probably redundant)
+var port = process.env.PORT || 3000;
 
 //sets the root directory to public
 app.use(express.static(__dirname + '/public')); //sets the root directory to public
