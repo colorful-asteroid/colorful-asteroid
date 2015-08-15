@@ -9,13 +9,18 @@
         <li ng-repeat="item in votesList.topics">
           {{ item.text }}
           <div></div>
-          <input ng-model="votesList.voteValue" class="slider" type="range" min="0" max="100" step="5" name="dislike/like" /> 
+          <input ng-model="votesList.voteValue" type="range" min="0" max="100" step="5" name="dislike/like" /> 
                     
           <div></div>
           <textarea name="comment" cols="40" rows="3" maxlength="140" placeholder="Enter a public comment (optional)"></textarea>
         </li>
       </ul>
-      <div class="cta" ng-click="votesList.addVotes()">SUBMIT</div>  
+      <div style="width:520px; margin: 0 auto;">
+        <div style="float:left" class="cta" ng-click="votesList.vote()">VOTE!</div>
+        <div class="cta" style="float:right;"ng-click="votesList.viewResults()">RESULTS</div> 
+      </div>
+
+
     </form>
   </center>
 </div

@@ -5,7 +5,7 @@
   </div>
 
   <form ng-submit="topicsList.addTopic()" class="topicForm"> 
-    <input type="text" ng-model="topicsList.topicText"  class="textInput" placeholder="Enter a topic">
+    <input type="text" required ng-model="topicsList.topicText"  class="textInput" placeholder="Enter a topic">
     <input class="btn-primary" type="submit" value="add">
   </form>
     
@@ -15,7 +15,6 @@
     </li>
   </ul>
   <div class="cta" ng-click="topicsList.startVote()">VOTE!</div>
-
 </div>
   
 
