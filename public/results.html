@@ -1,0 +1,13 @@
+<div ng-controller="ResultsController as resultsList">
+  <div class="pageTitle">
+    <h2>DISCUSS YOUR FEELS</h2>
+  </div>
+  <ul>
+   <li ng-repeat="result in resultsList.results">
+     {{result.text}} : {{result.score}} 
+    </li>
+  </ul>
+  <div class="cta" ng-click="resultsList.restart()">NEW</div>
+</div>
+  
+
