@@ -1,5 +1,5 @@
 .header{
-  color: #AD0604;
+  color: #CC1700;
   font-size: 60px;
   text-align: center;
   width: 100%;
@@ -30,7 +30,7 @@ input[type='text'] {
   height:100px;
   line-height:100px;
   margin: 0 auto;
-  background-color:#6C05C4;
+  background-color:#1C64CC;
   text-align: center;
   font-size: 40px;
   cursor: pointer; 
@@ -38,7 +38,7 @@ input[type='text'] {
 }
 
 .cta:hover {
-  background-color:#AB56F5;
+  background-color:#FF5B22;
 }
 
 li{
@@ -58,6 +58,7 @@ ul {
 
 .pageTitle {
   padding:20px;
+  color: #3D6399;
 }
 
 .about {
@@ -69,12 +70,10 @@ input[type='range'] {
   -webkit-appearance: none;
   padding-left:2px; padding-right:2px;
   -webkit-border-radius: 5px;
-  background-image: -webkit-linear-gradient(left, red, green);
+  background-image: -webkit-linear-gradient(left, lightcoral, lightgreen);
   border-radius: 0;
 }
 
 .btn-primary {
-  height: 100px;
-  border-radius: 0;
-  
+  display: hidden;
 }
