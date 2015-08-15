@@ -69,13 +69,11 @@ angular.module('Reflectiv', ['ngRoute'])
     };
   })
 .controller('VotesController', function($http){
-  
+  // console.log(this.voteValue);
 
   var votesList = this;
-    // votesList.topics = [
-    //   { topic: 'How cool is reflectiv?'},
-    //   { topic: 'How cool is TGA?'}
-    // ];
+  votesList.voteValue = 50;
+    
     votesList.topics = $http.get('/api/topics')
     // first function is callback on succcess
     .then(function(response){
@@ -89,7 +87,7 @@ angular.module('Reflectiv', ['ngRoute'])
 
 
     votesList.addVotes = function(){
-      $http.post('/api/votes', {text: "Testing 123", vote: 75})
+      $http.post('/api/votes', {text: "Testing 123", vote: votesList.voteValue})
       // first function is callback on success
       .then(function(response) {
         console.log('Vote submitted');
