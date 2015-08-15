@@ -5,7 +5,7 @@
   </div>
 
   <form ng-submit="topicsList.addTopic()" class="topicForm"> 
-    <input type="text" ng-model="topicsList.topicText"  class="textInput" placeholder="Enter a topic">
+    <input type="text" required ng-model="topicsList.topicText"  class="textInput" placeholder="Enter a topic">
     <input class="btn-primary" type="submit" value="add">
   </form>
     
@@ -14,8 +14,10 @@
      {{topic.text}} 
     </li>
   </ul>
-  <div class="cta" ng-click="topicsList.startVote()">VOTE!</div>
-
+    <div style="width:520px; margin: 0 auto;">
+      <div style="float:left" class="cta" ng-click="topicsList.vote()">VOTE!</div>
+      <div class="cta" style="float:right;"ng-click="topiscList.viewResults()">RESULTS</div> 
+    </div>
 </div>
   
 
