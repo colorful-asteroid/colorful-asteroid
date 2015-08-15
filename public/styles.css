@@ -56,10 +56,6 @@ ul {
   padding:0;
 }
 
-.slider {
-  width: 250px;
-}
-
 .pageTitle {
   padding:20px;
 }
@@ -69,9 +65,15 @@ ul {
 }
 
 input[type='range'] {
+  width: 250px;
   -webkit-appearance: none;
   padding-left:2px; padding-right:2px;
   -webkit-border-radius: 5px;
   background-image: -webkit-linear-gradient(left, red, green);
+  border-radius: 0;
+}
+
+.btn-primary {
+  height: 100px;
   border-radius: 0;
 }
