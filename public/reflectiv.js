@@ -74,7 +74,7 @@ angular.module('Reflectiv', ['ngRoute'])
     function(response) {
       console.log('you have an error');
     });
-    votesList.addVotes = function(){
+    votesList.vote = function(){
       $http.post('/api/votes', {text: "Testing 123", vote: votesList.voteValue})
       // first function is callback on success
       .then(function(response) {
@@ -84,12 +84,14 @@ angular.module('Reflectiv', ['ngRoute'])
       function(response) {
         console.log('you have an error in your voting');
       });
-      
+    };
 
       //receive list of all iems voted on
       //iterate over items
         //store votes into database
       //serve waiting page to voter
+    
+    votesList.viewResults = function(){
       $location.path('/topic/' + Sprint.table + '/results');
     };  
 })
@@ -106,7 +108,6 @@ angular.module('Reflectiv', ['ngRoute'])
   };
 
 });
-
 
 
 
