@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 var port = process.env.PORT || 3000;
 
 //sets the root directory to public
-app.use(express.static(__dirname + '/public')); //sets the root directory to public
+app.use(express.static(__dirname + '/public')); //sets the root directory to public 
 
 
 // connection string for our database
