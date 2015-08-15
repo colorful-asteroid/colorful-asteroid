@@ -7,9 +7,6 @@ angular.module('Reflectiv', ['ngRoute'])
   .when('/', {
     templateUrl: 'start.html'
   })
-  .when('/leader', {
-    templateUrl: 'leader.html'
-  })
   .when('/topic/:id', {
     templateUrl: 'topic.html'
   })
@@ -108,7 +105,6 @@ angular.module('Reflectiv', ['ngRoute'])
   };
 
 });
-
 
 
 

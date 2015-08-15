@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 var port = process.env.PORT || 3000;
 
 //sets the root directory to public
-app.use(express.static(__dirname + '/public')); //sets the root directory to public
+app.use(express.static(__dirname + '/public')); //sets the root directory to public 
 
 
 // connection string for our database
@@ -20,7 +20,7 @@ var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/po
 
 app.get('/api/topics', function(req, res){
   pg.connect(connectionString, function(err, client, done){
-    var query = client.query('SELECT text FROM topics');
+    var query = client.query('SELECT text, vote FROM topics');
     var rows = [];
 
     if (err) {
