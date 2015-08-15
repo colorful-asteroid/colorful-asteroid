@@ -18,7 +18,7 @@ app.use(express.static(__dirname + '/public')); //sets the root directory to pub
 // connection string for our database
 var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/postgres';
 
-app.get('/api/vote', function(req, res){
+app.get('/api/topics', function(req, res){
   pg.connect(connectionString, function(err, client, done){
     var query = client.query('SELECT text FROM topics');
     var rows = [];
@@ -37,7 +37,7 @@ app.get('/api/vote', function(req, res){
 
 });
 
-app.post('/api/vote', function(req, res){
+app.post('/api/topics', function(req, res){
   var rows = [];
 
   // Grab data from http request
@@ -66,5 +66,50 @@ app.post('/api/vote', function(req, res){
   });
 });
 
+app.post('/api/votes', function(req, res){
+  var rows = [];
+  
+  var data = {text: req.body.text, vote: req.body.vote};
+
+  pg.connect(connectionString, function(err, client, done){
+    client.query('INSERT INTO topics (text, vote) values ($1, $2)', [data.text, data.vote]);
+
+   
+    var query = client.query("SELECT text FROM topics ORDER BY id ASC");
+
+        if (err) {
+          return console.error('error running query', err);
+        }
+
+        query.on('row', function(row) {
+          rows.push(row);
+        });
+
+        query.on('end', function(result) {
+          client.end();
+          return res.json(rows);
+        });
+
+  });
+});
+
 // Describes the port we're listening on. Go to 'localhost:3000' in browser
 var server = app.listen(port);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
