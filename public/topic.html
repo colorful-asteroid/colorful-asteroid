@@ -1,6 +1,11 @@
 <div ng-controller="TopicsController as topicsList">
+  <div class="pageTitle">
+    Share this reflection: {{topicsList.sprintUrl}}
+    <h2>ENTER DISCUSSION SUGGESTIONS</h2>
+  </div>
+
   <form ng-submit="topicsList.addTopic()" class="topicForm"> 
-    <input type="text" ng-model="topicsList.topicText" placeholder="Enter a topic you want to discuss">
+    <input type="text" ng-model="topicsList.topicText"  class="textInput" placeholder="Enter a topic">
     <input class="btn-primary" type="submit" value="add">
   </form>
     

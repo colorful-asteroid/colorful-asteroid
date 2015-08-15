@@ -1,7 +1,6 @@
 angular.module('Reflectiv', ['ngRoute'])
 .service('Sprint', function(){
-  return {};
-
+  return {}; // object to store persistant info
 })
 .config( [ '$routeProvider', function($routeProvider){
   $routeProvider
@@ -16,19 +15,11 @@ angular.module('Reflectiv', ['ngRoute'])
   })
   .when('/topic/:id/vote', {
     templateUrl: 'vote.html'
+  })
+  .when('/topic/:id/results', {
+    templateUrl: 'results.html'
   });
-
 }])
-.controller('LeaderController', function($scope){
-    // Gather input from user
-    // User input will be assigned to $scope.name variable
-    $scope.createSprint = function() {
-      console.log($scope.name);
-    // format JSON object to send to DB
-    // Connect to DB
-    // Make post request with DB
-  };
-})
 .controller('TopicsController', function($location, $http, Sprint){
   var topicsList = this;
 
@@ -63,14 +54,14 @@ angular.module('Reflectiv', ['ngRoute'])
     topicsList.topicText = '';
   };
 
+  topicsList.sprintUrl = 'http://reflectiv.guru/topic/' + Sprint.table + '/';
+
   topicsList.startVote = function(){
       // needs to store all items voted on in database
       $location.path('/topic/' + Sprint.table + '/vote');
     };
   })
-.controller('VotesController', function($http){
-  // console.log(this.voteValue);
-
+.controller('VotesController', function($location, $http, Sprint){
   var votesList = this;
   votesList.voteValue = 50;
     
@@ -83,9 +74,6 @@ angular.module('Reflectiv', ['ngRoute'])
     function(response) {
       console.log('you have an error');
     });
-
-
-
     votesList.addVotes = function(){
       $http.post('/api/votes', {text: "Testing 123", vote: votesList.voteValue})
       // first function is callback on success
@@ -102,16 +90,21 @@ angular.module('Reflectiv', ['ngRoute'])
       //iterate over items
         //store votes into database
       //serve waiting page to voter
-    };
-  })
+      $location.path('/topic/' + Sprint.table + '/results');
+    };  
+})
 
-.controller('masterController', function($http){
-  $http.get('/api/test')
-  .then(function(response){
-    console.log('stuff');
-  }, function(response) {
+.controller('ResultsController', function($location, $http){
+  var resultsList = this;
+  resultsList.results = [
+    { text: 'Gundam', score: 100},
+    { text: 'Gundam Wing', score: 85},
+    { text: 'Gundam Seed', score: 40}
+  ];
+  resultsList.restart = function(){
+    $location.path('/');
+  };
 
-  });
 });
 
 
