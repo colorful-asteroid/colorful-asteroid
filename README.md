@@ -35,6 +35,42 @@ With -product-'s easy to use interface, people can rapidly leave feedback, that 
 ## How to Get Started ##
 Visit www.reflectiv.futbol, and create a survey. Both organizers and participants can add topics to the survey. Once finalized, participants can give each item a score and leave brief feedback. Organizers can go over and export feedback.
 
+Download PostgressApp 
+
+Download pgadmin
+
+In PGAdmin run this query:
+
+```
+CREATE DATABASE postgres
+  WITH OWNER = icusmooth -- NOTE: you much change 'icusmooth' to be the name of your computer
+       ENCODING = 'UTF8'
+       TABLESPACE = pg_default
+       LC_COLLATE = 'en_US.UTF-8'
+       LC_CTYPE = 'en_US.UTF-8'
+       CONNECTION LIMIT = -1;
+
+COMMENT ON DATABASE postgres
+  IS 'default administrative connection database';
+```
+
+Still in PGAdmin, run this query:
+
+```
+CREATE TABLE topics
+(
+  id serial NOT NULL,
+  text character varying(160) NOT NULL,
+  vote integer NOT NULL,
+  CONSTRAINT topics_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE topics
+  OWNER TO icusmooth; -- NOTE: you much change 'icusmooth' to be the name of your computer
+```
+
 ## Customer Quote ##
   > This process was a great improvement. I'm much more comfortable leaving feedback now.
 
