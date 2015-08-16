@@ -3,8 +3,8 @@
     <h2>DISCUSS YOUR FEELS</h2>
   </div>
   <ul>
-   <li ng-repeat="result in resultsList.results">
-     {{result.text}} : {{result.vote}} 
+    <li ng-repeat=" ( key,result) in resultsList.obj">
+      {{key}} : {{result}} 
     </li>
   </ul>
   <div class="cta" ng-click="resultsList.restart()">NEW</div>
