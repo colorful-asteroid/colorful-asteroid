@@ -100,8 +100,6 @@ angular.module('Reflectiv', ['ngRoute'])
   .then(function(response){
     resultsList.results = response.data;
     for (var i = 0; i < resultsList.results.length; i++){
-      console.log('**************', resultsList.results[i].text);
-
       if (resultsList.obj[resultsList.results[i].text]) {
         resultsList.obj[resultsList.results[i].text].push(resultsList.results[i].vote);
       }

@@ -33,28 +33,27 @@ With -product-'s easy to use interface, people can rapidly leave feedback, that 
   >  ¯\_(ツ)_/¯ ~Moose
 
 ## How to Get Started ##
-Visit www.reflectiv.futbol, and create a survey. Both organizers and participants can add topics to the survey. Once finalized, participants can give each item a score and leave brief feedback. Organizers can go over and export feedback.
+Follow the instructions below. Both organizers and participants can add topics to the survey. Once finalized, participants can give each item a score and leave brief feedback. Organizers can go over and export feedback.
 
-Download PostgressApp 
+###Database setup for Mac###
 
-Download pgadmin
+Go [HERE](http://postgresapp.com/) and download Postgress.app. Install and make sure you see the elephant in the running apps at the top in your dashboard.
 
-In PGAdmin run this query:
+![alt text](/public/assets/postgresapp.png)
 
-```
-CREATE DATABASE postgres
-  WITH OWNER = icusmooth -- NOTE: you much change 'icusmooth' to be the name of your computer
-       ENCODING = 'UTF8'
-       TABLESPACE = pg_default
-       LC_COLLATE = 'en_US.UTF-8'
-       LC_CTYPE = 'en_US.UTF-8'
-       CONNECTION LIMIT = -1;
+Go [HERE](http://www.pgadmin.org/download/macosx.php) and download the .dmg file for the latest version of pgAdmin.  
 
-COMMENT ON DATABASE postgres
-  IS 'default administrative connection database';
-```
+To connect to a server, click the plug icon in the top left corner for 'new server registration.' In the window fill in the necessary fields:
 
-Still in PGAdmin, run this query:
+![alt text](/public/assets/new_server.png)
+
+In the username, enter your computer name, as in the name you see before the $ in your terminal.
+
+In pgAdmin drill down into the left hand menus until you can click on the postgres database, which should be there by default. 
+
+![alt text](/public/assets/new_table.png)
+
+Click on the SQL magnifying glass and paste in the following SQL query:
 
 ```
 CREATE TABLE topics
@@ -68,8 +67,15 @@ WITH (
   OIDS=FALSE
 );
 ALTER TABLE topics
-  OWNER TO icusmooth; -- NOTE: you much change 'icusmooth' to be the name of your computer
+  OWNER TO yourComputerName; -- NOTE: Change 'yourComputerName' to your own computer's name
 ```
+
+![alt text](/public/assets/sql_create_table.png)
+
+Execute the query with F5 or by hitting the 'play arrow'. Your database should be good to go!
+
+###Running the app###
+Fork and clone this repo. In the command line type 'node app.js' and navigate to 'localhost:3000' and watch the magic happen!
 
 ## Customer Quote ##
   > This process was a great improvement. I'm much more comfortable leaving feedback now.
