@@ -85,23 +85,42 @@ angular.module('Reflectiv', ['ngRoute'])
       });
     };
 
-      //receive list of all iems voted on
-      //iterate over items
-        //store votes into database
-      //serve waiting page to voter
-
-      votesList.viewResults = function(){
-        $location.path('/topic/' + Sprint.table + '/results');
-      };  
-    })
+    votesList.viewResults = function(){
+      $location.path('/topic/' + Sprint.table + '/results');
+    };  
+  })
 
 .controller('ResultsController', function($location, $http){
   var resultsList = this;
-  resultsList.results = [
-  { text: 'Gundam', score: 100},
-  { text: 'Gundam Wing', score: 85},
-  { text: 'Gundam Seed', score: 40}
-  ];
+  resultsList.obj = {};
+
+  // Retrieve the list of already submitted votes when the topics page is accessed
+  resultsList.results = $http.get('/api/topics')
+  // first function is callback on succcess
+  .then(function(response){
+    resultsList.results = response.data;
+    for (var i = 0; i < resultsList.results.length; i++){
+      console.log('**************', resultsList.results[i].text);
+
+      if (resultsList.obj[resultsList.results[i].text]) {
+        resultsList.obj[resultsList.results[i].text].push(resultsList.results[i].vote);
+      }
+      else {
+        resultsList.obj[resultsList.results[i].text] = [resultsList.results[i].vote];
+      }
+    }
+    console.log('resultsList.obj', resultsList.obj);
+    
+  }, 
+  // second function is callback on error
+  function(response) {
+    console.log('you have an error');
+  });
+
+  resultsList.present = function(){
+  };
+
+
   resultsList.restart = function(){
     $location.path('/');
   };

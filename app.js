@@ -74,9 +74,6 @@ app.post('/api/votes', function(req, res){
   for (var i = 0; i < req.body.length; i++){
     data[i] = {text: req.body[i].text, vote: req.body[i].vote}
   }
-  // var data = {text: req.body.text, vote: req.body.vote};
-
-  console.log('data', data);
 
   pg.connect(connectionString, function(err, client, done){
 
