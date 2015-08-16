@@ -11,7 +11,7 @@
   </form>
     
   <ul>
-   <li ng-repeat="topic in topicsList.topics">
+   <li ng-repeat="topic in topicsList.topics | reverse">
      {{topic.text}} 
     </li>
   </ul>
