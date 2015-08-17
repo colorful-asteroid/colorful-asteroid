@@ -120,6 +120,15 @@ app.post('/api/votes', function(req, res){
   });
 });
 
+// Delete all rows from topics table to reset for a new sprint
+app.post('/api/reset', function(req, res){
+  pg.connect(connectionString, function(err, client, done){
+    var query = client.query('DELETE from topics');
+    res.end();
+  });
+
+});
+
 // Describes the port we're listening on. Go to 'localhost:3000' in browser to serve locally
 var server = app.listen(port);
 
