@@ -127,7 +127,7 @@ angular.module('Reflectiv', ['ngRoute'])
   function(response) { // error function
     console.log('you have an error');
   });
-
+  
   resultsList.restart = function(){
     $location.path('/'); // restart
   };
