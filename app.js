@@ -66,6 +66,25 @@ app.post('/api/topics', function(req, res){
   });
 });
 
+app.get('/api/votes', function(req, res){
+  pg.connect(connectionString, function(err, client, done){
+    var query = client.query('SELECT text, vote FROM topics WHERE vote > 0');
+    var rows = [];
+
+    if (err) {
+      return console.error('error running query', err);
+    }
+    query.on('row', function(row) {
+      rows.push(row);
+    });
+    query.on('end', function(result) {
+      client.end();
+      return res.json(rows);
+    });
+  });
+
+});
+
 app.post('/api/votes', function(req, res){
   var rows = [];
   var data = [];
@@ -82,7 +101,7 @@ app.post('/api/votes', function(req, res){
     }
 
 
-    var query = client.query("SELECT text FROM topics ORDER BY id ASC");
+    var query = client.query("SELECT text FROM topics WHERE vote > 0 ORDER BY id ASC");
 
     if (err) {
       return console.error('error running query', err);
