@@ -19,7 +19,14 @@ angular.module('Reflectiv', ['ngRoute'])
 }])
 .controller('TopicsController', function($location, $http, Sprint){ // injects location, http, sprint
   var topicsList = this; // sets scope to topicsList
+  
+  topicsList.init = function(){
+    if(Sprint.table === undefined){
+      Sprint.table = $location.path().substring(7);
+    }
+  };
 
+  topicsList.init();
   // Retrieve the list of already submitted votes when the topics page is accessed
   topicsList.topics = $http.get('/api/topics')
   .then(function(response){ // success function
@@ -56,6 +63,14 @@ angular.module('Reflectiv', ['ngRoute'])
 .controller('VotesController', function($location, $http, Sprint){ // injects location, http, sprint
   var votesList = this; // sets scope to votesLIst
 
+  votesList.init = function(){
+    if(Sprint.table === undefined){
+      Sprint.table = $location.path().slice(7, 18);
+    }
+  };
+
+  votesList.init();
+
   votesList.topics = $http.get('/api/topics') // gets topics to vote one
     .then(function(response){ // success function
       votesList.topics = response.data; // sets votesList variable
@@ -79,9 +94,18 @@ angular.module('Reflectiv', ['ngRoute'])
     };  
   })
 
-.controller('ResultsController', function($location, $http){ // injects location, http
+.controller('ResultsController', function($location, $http, Sprint){ // injects location, http
   var resultsList = this; // sets scope to resultsList
   resultsList.obj = {}; // initializes object that stores results
+  
+  resultsList.init = function(){
+    if(Sprint.table === undefined){
+      Sprint.table = $location.path().slice(7, 18);
+    }
+  };
+
+  resultsList.init();
+
 
   // Retrieve the list of already submitted votes when the topics page is accessed
   resultsList.results = $http.get('/api/votes')
@@ -106,12 +130,6 @@ angular.module('Reflectiv', ['ngRoute'])
 
   resultsList.restart = function(){
     $location.path('/'); // restart
-  };
-
-})
-.filter('reverse', function() { // function to reverse order of topics in ng-repeat
-  return function(items) {
-    return items.slice().reverse();
   };
 });
 
