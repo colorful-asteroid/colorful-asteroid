@@ -9,10 +9,7 @@
         <li ng-repeat="item in votesList.topics">
           {{ item.text }}
           <div></div>
-          <input ng-model="item.vote" type="range" min="0" max="100" step="5" name="dislike/like" /> 
-                    
-          <div></div>
-          <textarea name="comment" cols="40" rows="3" maxlength="140" placeholder="Enter a public comment (optional)"></textarea>
+          <input ng-model="item.vote" type="range" min="1" max="100" step="1" name="dislike/like" /> 
         </li>
       </ul>
       <div style="width:520px; margin: 0 auto;">

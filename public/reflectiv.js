@@ -107,17 +107,17 @@ angular.module('Reflectiv', ['ngRoute'])
         resultsList.obj[resultsList.results[i].text] = [resultsList.results[i].vote];
       }
     }
-    console.log('resultsList.obj', resultsList.obj);
-    
+    for(var arr in resultsList.obj){
+      console.log(resultsList.obj[arr]);
+      var sum = resultsList.obj[arr].reduce(function(a, b) { return a + b; });
+      resultsList.obj[arr] = sum / resultsList.obj[arr].length;
+      console.log(resultsList.obj[arr]);
+    }
   }, 
   // second function is callback on error
   function(response) {
     console.log('you have an error');
   });
-
-  resultsList.present = function(){
-  };
-
 
   resultsList.restart = function(){
     $location.path('/');
