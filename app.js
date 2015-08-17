@@ -57,7 +57,7 @@ app.post('/api/topics', function(req, res){
     client.query('INSERT INTO topics (text, vote) values ($1, $2)', [data.text, 0]);
 
     // Retrieves inserted values from database
-    var query = client.query("SELECT text FROM topics ORDER BY id ASC");
+    var query = client.query("SELECT text FROM topics ORDER BY id DESC");
     if (err) {
       return console.error('error running query', err);
     }
@@ -99,7 +99,7 @@ app.post('/api/votes', function(req, res){
   var data = [];
 
   for (var i = 0; i < req.body.length; i++){
-    data[i] = {text: req.body[i].text, vote: req.body[i].vote}
+    data[i] = {text: req.body[i].text, vote: req.body[i].vote};
   }
   pg.connect(connectionString, function(err, client, done){
 
