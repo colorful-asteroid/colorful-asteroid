@@ -7,7 +7,9 @@
   <ul>
     <!-- For each topic, dislpay a list item of the topic ('key') and the results ('results') of voting -->
     <li ng-repeat=" ( key,result) in resultsList.obj">
-      {{key}} : {{result}} 
+      <div ng-class="result >= 70 ? 'good' : (result <= 40 ? 'bad' : 'meh')">
+        {{key}} : {{result}}
+      </div>
     </li>
   </ul>
   <!-- Return to the start page and start a new sprint
