@@ -25,7 +25,7 @@ var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/po
 app.get('/api/topics', function(req, res){
   pg.connect(connectionString, function(err, client, done){
     var query = client.query('SELECT text, vote FROM topics');
-    var rows = [];
+    var rows = []; // Array to hold values returned from database
 
     if (err) {
       return console.error('error running query', err);
@@ -45,7 +45,7 @@ app.get('/api/topics', function(req, res){
 // These rows with 0 in the vote value are only used to present topics, and not when 
 // querying votes
 app.post('/api/topics', function(req, res){
-  var rows = [];
+  var rows = []; // Array to hold values returned from database
 
   // Grab data from http request
   var data = {text: req.body.text};
