@@ -121,7 +121,7 @@ angular.module('Reflectiv', ['ngRoute'])
     }
     for(var arr in resultsList.obj){ // iterate over object storing vote arrays
       var sum = resultsList.obj[arr].reduce(function(a, b) { return a + b; }); // reduce arrays to get average
-      resultsList.obj[arr] = sum / resultsList.obj[arr].length;
+      resultsList.obj[arr] = (sum / resultsList.obj[arr].length).toFixed(1);
     }
   }, 
   function(response) { // error function
@@ -129,7 +129,19 @@ angular.module('Reflectiv', ['ngRoute'])
   });
   
   resultsList.restart = function(){
+
+    // Http request to url that will delete all rows in database for a new sprint
+    $http.post('/api/reset', {}) 
+      .then(function(response) { // success function
+        console.log('Reset for new sprint');
+      }, 
+      function(response) { // error function
+        console.log('you have an error in your voting');
+      });
+
     $location.path('/'); // restart
+
+
   };
 });
 
