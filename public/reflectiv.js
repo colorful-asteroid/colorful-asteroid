@@ -95,7 +95,7 @@ angular.module('Reflectiv', ['ngRoute'])
   resultsList.obj = {};
 
   // Retrieve the list of already submitted votes when the topics page is accessed
-  resultsList.results = $http.get('/api/topics')
+  resultsList.results = $http.get('/api/votes')
   // first function is callback on succcess
   .then(function(response){
     resultsList.results = response.data;
