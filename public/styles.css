@@ -80,11 +80,19 @@ input[type='range'] {
 
 .good {
   color: green;
+  background-color: lightgreen;
   background-image: url("assets/good.png");
   background-repeat: no-repeat;
 }
 
 .bad {
+  background-color: pink;
+  background-image: url("assets/bad.png");
+  background-repeat: no-repeat;
+
+}
+
+.bad > .animationDiv {
   color: red;
   -webkit-animation: pulse2 3s linear infinite;
   -moz-animation: pulse2 3s linear infinite;
@@ -93,6 +101,10 @@ input[type='range'] {
 }
 
 .meh {
+  background-color: #FFFF9C;
+  background-image: url("assets/meh.png");
+  background-repeat: no-repeat;
+
 }
 
 @keyframes "pulse2" {
