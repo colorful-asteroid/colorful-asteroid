@@ -29,7 +29,9 @@ angular.module('Reflectiv', ['ngRoute'])
   topicsList.init();
   // Retrieve the list of already submitted votes when the topics page is accessed
   topicsList.topics = $http.get('/api/topics')
+  console.log('got them topics')
   .then(function(response){ // success function
+    console.log(topicsList.topics)
     topicsList.topics = response.data; // stores topics in topicsList
   }, 
   function(response) { // error function
@@ -87,7 +89,7 @@ angular.module('Reflectiv', ['ngRoute'])
     votesList.vote = function(){
       $http.post('/api/votes', votesList.topics) // post vote to db
       .then(function(response) { // success function
-        console.log('Vote submitted');
+        console.log('Vote submitted!');
       }, 
       function(response) { // error function
         console.log('you have an error in your voting');
