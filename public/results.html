@@ -1,0 +1,22 @@
+<!-- This page displays the topics and the voting data.
+ Should have an aggregate of all the results from voting--> 
+<div ng-controller="ResultsController as resultsList">
+  <div class="pageTitle">
+    <h2>DISCUSS YOUR FEELS</h2>
+  </div>
+  <ul>
+    <!-- For each topic, dislpay a list item of the topic ('key') and the results ('results') of voting -->
+    <li ng-repeat=" ( key,result) in resultsList.obj">
+      <div ng-class="result >= 70 ? 'good' : (result <= 40 ? 'bad' : 'meh')">
+        <div class="animationDiv">
+        {{key}} : {{result}}
+        </div>
+      </div>
+    </li>
+  </ul>
+  <!-- Return to the start page and start a new sprint
+  Should export the results and start a new DB instance -->
+  <div class="cta" ng-click="resultsList.restart()">NEW</div>
+</div>
+  
+
