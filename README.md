@@ -80,4 +80,6 @@ Fork and clone this repo. In the command line type 'node app.js' and navigate to
 ## Customer Quote ##
   > This process was a great improvement. I'm much more comfortable leaving feedback now.
 
-### Improve your feedback process today with Reflectiv! ###
+## Future improvement##
+Currently our application is in a demo state where it works for one user. The most urgent improvement would be able to add functionality that allows multiple people to use Reflectiv at once. Upon creation of a sprint, we envision a url that can be shared with users to allow topic submission and voting. We suggest accomplishing restructuring the database to allow for multiple sprints.
+
