@@ -5,7 +5,7 @@ angular.module('Reflectiv', ['ngRoute'])
 .config( [ '$routeProvider', function($routeProvider){
   $routeProvider
   .when('/', {
-    templateUrl: 'start.html' // serves start view
+    templateUrl: 'topic.html' // serves start view
   })
   .when('/topic/:id', {
     templateUrl: 'topic.html' // serves topic view
