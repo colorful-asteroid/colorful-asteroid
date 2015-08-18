@@ -11,10 +11,10 @@ angular.module('Reflectiv', ['ngRoute'])
   // .when('/topic/:id', {
   //   templateUrl: 'topic.html' // serves topic view
   // })
-  .when('/topic/:id/vote', {
+.when('/topic/:id/vote', {
     templateUrl: 'vote.html' // serves vote view
   })
-  .when('/topic/:id/results', {
+.when('/topic/:id/results', {
     templateUrl: 'results.html' // serves results view
   });
 }])
@@ -29,11 +29,10 @@ angular.module('Reflectiv', ['ngRoute'])
   };
 
   topicsList.init();
+  
   // Retrieve the list of already submitted votes when the topics page is accessed
   topicsList.topics = $http.get('/api/topics')
-  console.log('got them topics')
   .then(function(response){ // success function
-    console.log(topicsList.topics)
     topicsList.topics = response.data; // stores topics in topicsList
   }, 
   function(response) { // error function
@@ -46,12 +45,12 @@ angular.module('Reflectiv', ['ngRoute'])
   };
 
   topicsList.addTopic = function(){
-      var container = {}; 
-      for(var i =0; i<topicsList.topics.length; i++){
-        container[topicsList.topics[i]["text"]] = true
-      }
+    var container = {}; 
+    for(var i =0; i<topicsList.topics.length; i++){
+      container[topicsList.topics[i]["text"]] = true
+    }
 
-      if(!container[topicsList.topicText]){
+    if(!container[topicsList.topicText]){
         $http.post('/api/topics', {text: topicsList.topicText,}) // adds topic to database
         .then(function(response) { // success function
           topicsList.topics = response.data; // updates topics
@@ -64,18 +63,18 @@ angular.module('Reflectiv', ['ngRoute'])
         console.log("no duplicate")
       }
 
-  };
+    };
 
   topicsList.sprintUrl = 'http://reflectiv.guru/topic/' + Sprint.table + '/'; // sets sharable url
 
   topicsList.startVote = function(){
       $location.path('/topic/' + Sprint.table + '/vote'); // navigates to vote view
     };
-  topicsList.runner = function(){
-    topicsList.create();
-    topicsList.startVote();
-  };
-})
+    topicsList.runner = function(){
+      topicsList.create();
+      topicsList.startVote();
+    };
+  })
 
 
 .controller('VotesController', function($location, $http, Sprint){ // injects location, http, sprint
@@ -97,17 +96,31 @@ angular.module('Reflectiv', ['ngRoute'])
       console.log('you have an error');
     });
 
-    votesList.vote = function(){
-      $http.post('/api/votes', votesList.topics) // post vote to db
-      .then(function(response) { // success function
-        console.log('Vote submitted!');
-      }, 
-      function(response) { // error function
-        console.log('you have an error in your voting');
-      });
+    votesList.check = function() {
+      console.log('vote objects : ', votesList.topics);
+      // if every returns true, invoke vote();
+      if(votesList.topics.every(checkVotes)){
+        console.log(Sprint.table)
+        vote();
+        $location.path('/topic/' + Sprint.table + '/results');
+      };
     };
 
-    votesList.viewResults = function(){
+    var vote = function(){
+        $http.post('/api/votes', votesList.topics) // post vote to db
+          .then(function(response) { // success function
+            console.log('Vote submitted');
+          }, 
+        function(response) { // error function
+          console.log('you have an error in your voting');
+        });
+        };
+
+        var checkVotes = function(currentValue, index, array){
+          return currentValue.vote > 0;
+        };
+
+        votesList.viewResults = function(){
       $location.path('/topic/' + Sprint.table + '/results'); // navigates to results view
     };  
   })
