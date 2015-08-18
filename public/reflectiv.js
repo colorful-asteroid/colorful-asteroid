@@ -2,6 +2,7 @@ angular.module('Reflectiv', ['ngRoute'])
 .service('Sprint', function(){
   return {}; // object to store persistant info
 })
+
 .config( [ '$routeProvider', function($routeProvider){
   $routeProvider
   .when('/', {
@@ -17,6 +18,7 @@ angular.module('Reflectiv', ['ngRoute'])
     templateUrl: 'results.html' // serves results view
   });
 }])
+
 .controller('TopicsController', function($location, $http, Sprint){ // injects location, http, sprint
   var topicsList = this; // sets scope to topicsList
   
@@ -44,15 +46,24 @@ angular.module('Reflectiv', ['ngRoute'])
   };
 
   topicsList.addTopic = function(){
-    $http.post('/api/topics', {text: topicsList.topicText,}) // adds topic to database
-    .then(function(response) { // success function
-      topicsList.topics = response.data; // updates topics
-    }, 
-    function(response) { // error function
-      console.log('you have an error in your post request');
-    });
+      var container = {}; 
+      for(var i =0; i<topicsList.topics.length; i++){
+        container[topicsList.topics[i]["text"]] = true
+      }
 
-    topicsList.topicText = ''; // clears input field
+      if(!container[topicsList.topicText]){
+        $http.post('/api/topics', {text: topicsList.topicText,}) // adds topic to database
+        .then(function(response) { // success function
+          topicsList.topics = response.data; // updates topics
+        }, 
+        function(response) { // error function
+          console.log('you have an error in your post request');
+        });
+
+        topicsList.topicText = ''; // clears input field        
+        console.log("no duplicate")
+      }
+
   };
 
   topicsList.sprintUrl = 'http://reflectiv.guru/topic/' + Sprint.table + '/'; // sets sharable url
