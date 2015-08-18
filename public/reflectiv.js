@@ -10,10 +10,10 @@ angular.module('Reflectiv', ['ngRoute'])
   // .when('/topic/:id', {
   //   templateUrl: 'topic.html' // serves topic view
   // })
-  .when('/topic/:id/vote', {
+.when('/topic/:id/vote', {
     templateUrl: 'vote.html' // serves vote view
   })
-  .when('/topic/:id/results', {
+.when('/topic/:id/results', {
     templateUrl: 'results.html' // serves results view
   });
 }])
@@ -59,11 +59,11 @@ angular.module('Reflectiv', ['ngRoute'])
   topicsList.startVote = function(){
       $location.path('/topic/' + Sprint.table + '/vote'); // navigates to vote view
     };
-  topicsList.runner = function(){
-    topicsList.create();
-    topicsList.startVote();
-  };
-})
+    topicsList.runner = function(){
+      topicsList.create();
+      topicsList.startVote();
+    };
+  })
 
 
 .controller('VotesController', function($location, $http, Sprint){ // injects location, http, sprint
@@ -85,15 +85,8 @@ angular.module('Reflectiv', ['ngRoute'])
       console.log('you have an error');
     });
 
-    votesList.vote = function(){
-      $http.post('/api/votes', votesList.topics) // post vote to db
-      .then(function(response) { // success function
-        console.log('Vote submitted');
-      }, 
-      function(response) { // error function
-        console.log('you have an error in your voting');
-      });
-    };
+    
+
 
     votesList.viewResults = function(){
       $location.path('/topic/' + Sprint.table + '/results'); // navigates to results view
