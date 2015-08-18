@@ -102,7 +102,15 @@ angular.module('Reflectiv', ['ngRoute'])
       if(votesList.topics.every(checkVotes)){
         vote();
         $location.path('/topic/' + Sprint.table + '/results');
-      };
+      } 
+
+      if(!votesList.topics.every(checkVotes)){
+        for(var i = 0; i < votesList.topics; i++){
+          if(votesList.topics[i].vote === 0){
+            return alert("You did not vote for : ", votesList.topics[i].text)
+          };
+        };
+      }
     };
 
     var vote = function(){
