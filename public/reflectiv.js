@@ -7,9 +7,9 @@ angular.module('Reflectiv', ['ngRoute'])
   .when('/', {
     templateUrl: 'topic.html' // serves start view
   })
-  .when('/topic/:id', {
-    templateUrl: 'topic.html' // serves topic view
-  })
+  // .when('/topic/:id', {
+  //   templateUrl: 'topic.html' // serves topic view
+  // })
   .when('/topic/:id/vote', {
     templateUrl: 'vote.html' // serves vote view
   })
@@ -59,7 +59,12 @@ angular.module('Reflectiv', ['ngRoute'])
   topicsList.startVote = function(){
       $location.path('/topic/' + Sprint.table + '/vote'); // navigates to vote view
     };
-  })
+  topicsList.runner = function(){
+    topicsList.create();
+    topicsList.startVote();
+  };
+})
+
 
 .controller('VotesController', function($location, $http, Sprint){ // injects location, http, sprint
   var votesList = this; // sets scope to votesLIst
