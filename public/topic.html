@@ -7,7 +7,7 @@
   </div>
   <!-- The form to enter topics -->
   <form ng-submit="topicsList.addTopic()" class="topicForm"> 
-    <input type="text" required ng-model="topicsList.topicText"  class="textInput" placeholder="Enter a topic">
+    <input type="text" required ng-model="topicsList.topicText" maxlength="24"  class="textInput" placeholder="Enter a topic">
     <div></div>
     <!-- Click to post a topic -->
     <input style="visibility: hidden;" class="btn-primary" type="submit" value="add">
