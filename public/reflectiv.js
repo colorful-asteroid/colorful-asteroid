@@ -163,6 +163,7 @@ angular.module('Reflectiv', ['ngRoute'])
     for(var arr in resultsList.obj){ // iterate over object storing vote arrays
       var sum = resultsList.obj[arr].reduce(function(a, b) { return a + b; }); // reduce arrays to get average
       resultsList.obj[arr] = (sum / resultsList.obj[arr].length).toFixed(1);
+      console.log(resultsList.obj);
     }
   }, 
   function(response) { // error function
