@@ -102,7 +102,6 @@ angular.module('Reflectiv', ['ngRoute'])
     });
 
     votesList.check = function() {
-      console.log('vote objects : ', votesList.topics);
       // if every returns true, invoke vote();
       if(votesList.topics.every(checkVotes)){
         console.log(Sprint.table)
