@@ -21,7 +21,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 // Connection string for our database
-var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/postgres';
+var connectionString = 'postgres://bzqxihudqjclez:cll0Om9XWQBRhF0crLcbItUVCM@ec2-54-197-230-210.compute-1.amazonaws.com:5432/d4qan9ha06vmr4' || 'postgres://localhost:5432/postgres';
 
 // Request returns an array with all submitted topics
 app.get('/api/topics', function(req, res){
