@@ -1,14 +1,14 @@
 <!-- This is the page is where topics are created -->
   <!-- The leader will have the opportunity do delete/combine topics -->
-<div ng-controller="TopicsController as topicsList">
-  <div class="pageTitle">
-    Share this reflection: {{topicsList.sprintUrl}}
+<div ng-controller="TopicsController as topicsList" align="center">
+  <div class="pageTitle" align="center">
     <h2>ENTER DISCUSSION SUGGESTIONS</h2>
   </div>
   <!-- The form to enter topics -->
   <form name="kahsey" ng-submit="topicsList.addTopic()" class="topicForm" > 
     <input type="text" ng-model="topicsList.topicText" maxlength="24"  class="textInput" placeholder="Enter a topic" ng-model="input" required />
   <div>
+    <br>
     <input class="btn-primary" type="submit" value="add" ng-disabled="kaysey.$invalid || kahsey.$pending">
   </div>
   </form>

@@ -2,13 +2,15 @@
 // for querying the database to insert and retrieve topic and vote data
 
 // The project uses a node server with express and a Postgres database to store data
-var express = require('express'),
+ var express = require('express'),
 serveStatic = require('serve-static'),
-pg = require('pg'), 
+pg = require('pg'),
 morgan = require('morgan'),
 bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.json());
+
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Listen for an environment port
