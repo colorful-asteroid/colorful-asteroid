@@ -108,7 +108,15 @@ angular.module('Reflectiv', ['ngRoute'])
       if(votesList.topics.every(checkVotes)){
         vote();
         $location.path('/topic/' + Sprint.table + '/results');
-      };
+      } 
+
+      if(!votesList.topics.every(checkVotes)){
+        for(var i = 0; i < votesList.topics; i++){
+          if(votesList.topics[i].vote === 0){
+            return alert("You did not vote for : ", votesList.topics[i].text)
+          };
+        };
+      }
     };
 
     var vote = function(){
@@ -161,6 +169,7 @@ angular.module('Reflectiv', ['ngRoute'])
     for(var arr in resultsList.obj){ // iterate over object storing vote arrays
       var sum = resultsList.obj[arr].reduce(function(a, b) { return a + b; }); // reduce arrays to get average
       resultsList.obj[arr] = (sum / resultsList.obj[arr].length).toFixed(1);
+      console.log(resultsList.obj);
     }
   }, 
   function(response) { // error function
