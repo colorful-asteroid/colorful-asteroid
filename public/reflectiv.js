@@ -49,8 +49,7 @@ angular.module('Reflectiv', ['ngRoute'])
       for(var i =0; i<topicsList.topics.length; i++){
         container[topicsList.topics[i]["text"]] = true
       }
-      console.log("cont", container.topicList)
-
+      
       if(!container[topicsList.topicText]){
         // console.log(container)
         $http.post('/api/topics', {text: topicsList.topicText,}) // adds topic to database
