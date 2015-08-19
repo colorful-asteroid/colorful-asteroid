@@ -60,8 +60,10 @@ angular.module('Reflectiv', ['ngRoute'])
         });
 
         topicsList.topicText = ''; // clears input field        
-        console.log("no duplicate")
-      }
+        console.log("no duplicates found")
+      } 
+      
+      topicsList.topicText = '';
 
     };
 
@@ -70,9 +72,12 @@ angular.module('Reflectiv', ['ngRoute'])
   topicsList.startVote = function(){
       $location.path('/topic/' + Sprint.table + '/vote'); // navigates to vote view
     };
-    topicsList.runner = function(){
-      topicsList.create();
-      topicsList.startVote();
+  
+  topicsList.runner = function(){
+      if(topicsList.topics.length){
+        topicsList.create();
+        topicsList.startVote();
+      }
     };
   })
 
