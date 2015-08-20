@@ -139,7 +139,7 @@ angular.module('Reflectiv', ['ngRoute'])
     };  
   })
 
-.controller('ResultsController', function($location, $http, Sprint){ // injects location, http
+.controller('ResultsController', function($scope, $location, $http, Sprint){ // injects location, http
   var resultsList = this; // sets scope to resultsList
   resultsList.obj = {}; // initializes object that stores results
   
@@ -150,6 +150,11 @@ angular.module('Reflectiv', ['ngRoute'])
   };
 
   resultsList.init();
+
+  resultsList.viewResults = function(){
+      console.log
+      $location.path('/topic/' + Sprint.table + '/results'); // navigates to results view
+    };   
 
 
   // Retrieve the list of already submitted votes when the topics page is accessed
