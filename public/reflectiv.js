@@ -48,7 +48,7 @@ angular.module('Reflectiv', ['ngRoute'])
   };
 
   topicsList.addTopic = function(){
-    var container = {}; 
+    var container = {};
     for(var i =0; i<topicsList.topics.length; i++){
       container[topicsList.topics[i]["text"]] = true
     }
@@ -67,6 +67,7 @@ angular.module('Reflectiv', ['ngRoute'])
       } 
       
       topicsList.topicText = '';
+    $scope.topicsAdded = true; 
 
     };
 
@@ -190,8 +191,7 @@ angular.module('Reflectiv', ['ngRoute'])
       });
 
     $location.path('/'); // restart
-
-
+    location.reload();
   };
 });
 
