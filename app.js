@@ -9,6 +9,7 @@ morgan = require('morgan'),
 bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.json());
+var url = require('url')
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -48,7 +49,7 @@ app.get('/api/topics', function(req, res){
 // querying votes
 app.post('/api/topics', function(req, res){
   var rows = []; // Array to hold values returned from database
-
+   url.parse(req.url).query
   // Grab data from http request
   var data = {text: req.body.text};
 
