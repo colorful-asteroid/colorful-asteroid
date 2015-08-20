@@ -19,7 +19,7 @@ angular.module('Reflectiv', ['ngRoute'])
   });
 }])
 
-.controller('TopicsController', function($location, $http, Sprint){ // injects location, http, sprint
+.controller('TopicsController', function($scope, $location, $http, Sprint){ // injects location, http, sprint
   var topicsList = this; // sets scope to topicsList
   
   topicsList.init = function(){
@@ -40,8 +40,11 @@ angular.module('Reflectiv', ['ngRoute'])
   });
 
   topicsList.create = function(){
-    Sprint.table = Math.random().toString(36).substring(7); // generates sprint id
-    $location.path('/topic/' + Sprint.table); // sets url to sprint id
+    Sprint.table = Math.random().toString(36).substring(7);
+    $scope.createLink = true;
+    topicsList.sprintUrl = 'http://reflectiv.herokuapp.com/topic/' + Sprint.table + '/vote';
+     // generates sprint id
+    // $location.path('/topic/' + Sprint.table); // sets url to sprint id
   };
 
   topicsList.addTopic = function(){
@@ -67,7 +70,7 @@ angular.module('Reflectiv', ['ngRoute'])
 
     };
 
-  topicsList.sprintUrl = 'http://reflectiv.guru/topic/' + Sprint.table + '/'; // sets sharable url
+  topicsList.sprintUrl = 'http://reflectiv.herokuapp.com/topic/' + Sprint.table + '/vote'; // sets sharable url
 
   topicsList.startVote = function(){
       $location.path('/topic/' + Sprint.table + '/vote'); // navigates to vote view
@@ -75,7 +78,6 @@ angular.module('Reflectiv', ['ngRoute'])
   
   topicsList.runner = function(){
       if(topicsList.topics.length){
-        topicsList.create();
         topicsList.startVote();
       }
     };
