@@ -12,32 +12,25 @@
     <input class="btn-primary" type="submit" value="add" ng-disabled="kaysey.$invalid || kahsey.$pending">
   </div>
   </form>
-    
-    
   <ul>
+    <!-- displays topics -->
    <li ng-repeat="topic in topicsList.topics">
      {{topic.text}} 
     </li>
   </ul>
-
   <div ng-controller="TopicsController">
    <input type="button" value="Create survey link" ng-click="topicsList.create()" ng-model="createLink">
   <ul>
     <STRONG><br>
+      <!-- shows link soon as it is created -->
     <li ng-if="createLink">
       {{topicsList.sprintUrl}}<br>
     </li>
     </STRONG>
   </ul>
+  <!-- shows results button once link is created -->
   <div align="center" ng-if="createLink">
   <input ng-controller="ResultsController as resultsList" type="button" value="View results" ng-click="resultsList.viewResults()">
 </div>
-  
-  </div>
 </div>
-
-
-  
-    <!-- <input class="btn-primary" type="submit" value="add"> -->
-
-
+</div>

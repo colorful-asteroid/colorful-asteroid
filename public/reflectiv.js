@@ -84,7 +84,7 @@ angular.module('Reflectiv', ['ngRoute'])
   })
 
 
-.controller('VotesController', function($location, $http, Sprint){ // injects location, http, sprint
+.controller('VotesController', function($window, $location, $http, Sprint){ // injects location, http, sprint
   var votesList = this; // sets scope to votesLIst
 
   votesList.init = function(){
@@ -110,11 +110,11 @@ angular.module('Reflectiv', ['ngRoute'])
         vote();
         $location.path('/topic/' + Sprint.table + '/results');
       } 
-
+      // checks if every topic has been voted on
       if(!votesList.topics.every(checkVotes)){
         for(var i = 0; i < votesList.topics; i++){
           if(votesList.topics[i].vote === 0){
-            return alert("You did not vote for : ", votesList.topics[i].text)
+            $window.alert("You did not vote for : ", votesList.topics[i].text)
           };
         };
       }
@@ -150,9 +150,8 @@ angular.module('Reflectiv', ['ngRoute'])
   };
 
   resultsList.init();
-
+  
   resultsList.viewResults = function(){
-      console.log
       $location.path('/topic/' + Sprint.table + '/results'); // navigates to results view
     };   
 
