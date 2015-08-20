@@ -56,6 +56,7 @@ app.post('/api/topics', function(req, res){
   pg.connect(connectionString, function(err, client, done){
 
     // Insert topics into table
+
     client.query('INSERT INTO topics (text, vote) values ($1, $2)', [data.text, 0]);
 
     // Retrieves inserted values from database
@@ -68,6 +69,7 @@ app.post('/api/topics', function(req, res){
     });
     query.on('end', function(result) {
       client.end();
+      console.log(result)
       return res.json(rows);
     });
 
@@ -103,18 +105,26 @@ app.post('/api/votes', function(req, res){
   for (var i = 0; i < req.body.length; i++){
     data[i] = {text: req.body[i].text, vote: req.body[i].vote};
   }
+
   pg.connect(connectionString, function(err, client, done){
 
     for (var i = 0; i < data.length; i++) {
-      client.query('INSERT INTO topics (text, vote) values ($1, $2)', [data[i].text, data[i].vote]);
-    }
+      //select in table topics in column text the value with data[i] text
+      //replace that row's vote value to data[i].vote
+
+
+      client.query('UPDATE topics SET vote=$2 WHERE text=$1',[data[i].text, data[i].vote]);}
+
     var query = client.query("SELECT text FROM topics ORDER BY id ASC");
+    
     if (err) {
       return console.error('error running query', err);
     }
+
     query.on('row', function(row) {
       rows.push(row);
     });
+
     query.on('end', function(result) {
       client.end();
       return res.json(rows);

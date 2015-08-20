@@ -48,13 +48,12 @@ angular.module('Reflectiv', ['ngRoute'])
   };
 
   topicsList.addTopic = function(){
-      var container = {}; 
-      for(var i =0; i<topicsList.topics.length; i++){
-        container[topicsList.topics[i]["text"]] = true
-      }
-      
-      if(!container[topicsList.topicText]){
-        // console.log(container)
+    var container = {}; 
+    for(var i =0; i<topicsList.topics.length; i++){
+      container[topicsList.topics[i]["text"]] = true
+    }
+
+    if(!container[topicsList.topicText]){
         $http.post('/api/topics', {text: topicsList.topicText,}) // adds topic to database
         .then(function(response) { // success function
           topicsList.topics = response.data; // updates topics
@@ -69,7 +68,7 @@ angular.module('Reflectiv', ['ngRoute'])
       
       topicsList.topicText = '';
 
-  };
+    };
 
   topicsList.sprintUrl = 'http://reflectiv.herokuapp.com/topic/' + Sprint.table + '/vote'; // sets sharable url
 
@@ -105,9 +104,9 @@ angular.module('Reflectiv', ['ngRoute'])
     });
 
     votesList.check = function() {
-      console.log('vote objects : ', votesList.topics);
       // if every returns true, invoke vote();
       if(votesList.topics.every(checkVotes)){
+        console.log(Sprint.table)
         vote();
         $location.path('/topic/' + Sprint.table + '/results');
       } 
@@ -125,20 +124,17 @@ angular.module('Reflectiv', ['ngRoute'])
         $http.post('/api/votes', votesList.topics) // post vote to db
           .then(function(response) { // success function
             console.log('Vote submitted');
-        }, 
+          }, 
         function(response) { // error function
           console.log('you have an error in your voting');
         });
-      };
+        };
 
-    var checkVotes = function(currentValue, index, array){
-      return currentValue.vote > 0;
-    };
+        var checkVotes = function(currentValue, index, array){
+          return currentValue.vote > 0;
+        };
 
-    
-
-
-    votesList.viewResults = function(){
+        votesList.viewResults = function(){
       $location.path('/topic/' + Sprint.table + '/results'); // navigates to results view
     };  
   })
