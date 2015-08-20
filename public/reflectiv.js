@@ -36,7 +36,7 @@ angular.module('Reflectiv', ['ngRoute'])
     topicsList.topics = response.data; // stores topics in topicsList
   }, 
   function(response) { // error function
-    console.log('you have an error');
+    console.log('you have an error ', response);
   });
 
   topicsList.create = function(){
@@ -54,7 +54,7 @@ angular.module('Reflectiv', ['ngRoute'])
     }
 
     if(!container[topicsList.topicText]){
-        $http.post('/api/topics', {text: topicsList.topicText,}) // adds topic to database
+        $http.post('/api/topics?'+Sprint.table, {text: topicsList.topicText,}) // adds topic to database
         .then(function(response) { // success function
           topicsList.topics = response.data; // updates topics
         }, 
