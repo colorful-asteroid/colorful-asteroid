@@ -1,8 +1,8 @@
 <!-- This is the page is where topics are created -->
   <!-- The leader will have the opportunity do delete/combine topics -->
 <div ng-controller="TopicsController as topicsList" align="center">
-  <div class="pageTitle" align="center">
-    <h2>ENTER DISCUSSION SUGGESTIONS</h2>
+  <div id="addtopics" class="pageTitle" align="center">
+    <h2>Add survey topics</h2>
   </div>
   <!-- The form to enter topics -->
   <form name="kahsey" ng-submit="topicsList.addTopic()" class="topicForm" > 
@@ -19,7 +19,20 @@
      {{topic.text}} 
     </li>
   </ul>
-  <input type="button" value="GO VOTE YOUR TOPICS!" ng-click="topicsList.runner()">
+
+  <div ng-controller="TopicsController">
+   <input type="button" value="Create survey link" ng-click="topicsList.create()" ng-model="createLink">
+  <ul>
+    <STRONG><br>
+    <li ng-if="createLink">
+      {{topicsList.sprintUrl}}
+    </li>
+    </STRONG>
+  </ul>
+
+  </div>
+
+
 </div>
   
     <!-- <input class="btn-primary" type="submit" value="add"> -->
