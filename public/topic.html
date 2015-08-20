@@ -6,7 +6,7 @@
   </div>
   <!-- The form to enter topics -->
   <form name="kahsey" ng-submit="topicsList.addTopic()" class="topicForm" > 
-    <input type="text" ng-model="topicsList.topicText" maxlength="24"  class="textInput" placeholder="Enter a topic" ng-model="input" required />
+    <input type="text" size="27" ng-model="topicsList.topicText" maxlength="24" class="textInput" placeholder="Enter a topic" ng-model="input" required />
   <div>
     <br>
     <input class="btn-primary" type="submit" value="add" ng-disabled="kaysey.$invalid || kahsey.$pending">
