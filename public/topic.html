@@ -29,12 +29,14 @@
     </li>
     </STRONG>
   </ul>
+  <div align="center" ng-if="createLink">
+  <input ng-controller="ResultsController as resultsList" type="button" value="View results" ng-click="resultsList.viewResults()">
+</div>
+  
   </div>
 </div>
 
-<div align="center">
-  <input ng-controller="ResultsController as resultsList" type="button" value="View results" ng-click="resultsList.viewResults()">
-</div>
+
   
     <!-- <input class="btn-primary" type="submit" value="add"> -->
 
