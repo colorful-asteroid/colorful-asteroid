@@ -25,11 +25,15 @@
   <ul>
     <STRONG><br>
     <li ng-if="createLink">
-      {{topicsList.sprintUrl}}
+      {{topicsList.sprintUrl}}<br>
     </li>
     </STRONG>
   </ul>
   </div>
+</div>
+
+<div align="center">
+  <input ng-controller="ResultsController as resultsList" type="button" value="View results" ng-click="resultsList.viewResults()">
 </div>
   
     <!-- <input class="btn-primary" type="submit" value="add"> -->

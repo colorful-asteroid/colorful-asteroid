@@ -151,6 +151,11 @@ angular.module('Reflectiv', ['ngRoute'])
 
   resultsList.init();
 
+  resultsList.viewResults = function(){
+      console.log
+      $location.path('/topic/' + Sprint.table + '/results'); // navigates to results view
+    };   
+
 
   // Retrieve the list of already submitted votes when the topics page is accessed
   resultsList.results = $http.get('/api/votes')
