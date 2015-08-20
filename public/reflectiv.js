@@ -180,7 +180,6 @@ angular.module('Reflectiv', ['ngRoute'])
   });
   
   resultsList.restart = function(){
-
     // Http request to url that will delete all rows in database for a new sprint
     $http.post('/api/reset', {}) 
       .then(function(response) { // success function
