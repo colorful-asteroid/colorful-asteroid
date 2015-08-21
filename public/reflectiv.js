@@ -110,7 +110,7 @@ angular.module('Reflectiv', ['ngRoute'])
         console.log(Sprint.table)
         vote();
         $location.path('/topic/' + Sprint.table + '/results');
-      } 
+      };
       // checks if every topic has been voted on
       if(!votesList.topics.every(checkVotes)){
         for(var i = 0; i < votesList.topics; i++){
@@ -118,7 +118,7 @@ angular.module('Reflectiv', ['ngRoute'])
             $window.alert("You did not vote for : ", votesList.topics[i].text)
           };
         };
-      }
+      };
     };
 
     var vote = function(){

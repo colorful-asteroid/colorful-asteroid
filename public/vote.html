@@ -1,13 +1,14 @@
 <!-- Voting page -->
 <div align= "center">
   <div class="pageTitle">
-    <h2>HOW DID THAT MAKE YOU FEEL?</h2>
+    <h2>Place votes below</h2>
   </div>
   <!-- Controller for voting -->
   <center ng-controller="VotesController as votesList">
     <form>
       <ul>
       <!-- Displays the topic to vote on -->
+      <h4>*Bad -------- Good*</h4>
         <li ng-repeat="item in votesList.topics">
           {{ item.text }}
           <div></div>
