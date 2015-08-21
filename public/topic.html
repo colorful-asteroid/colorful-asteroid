@@ -1,5 +1,28 @@
 <!-- This is the page is where topics are created -->
   <!-- The leader will have the opportunity do delete/combine topics -->
+<!--     <div align="center" ng-controller="TopicsController">
+      <br>
+   <input type="button" value="Create survey link" ng-click="topicsList.create()" ng-model="createLink">
+  
+</div> -->
+
+<!-- on page load, a link will be generated -->
+<div align="center" ng-controller="TopicsController as topicsList" ng-init="topicsList.create()">
+  <h3>
+    <STRONG>
+      Link generated for this survey
+    </STRONG>
+  </h3>
+<ul>
+    <STRONG>
+      <!-- shows link soon as it is created -->
+    <li ng-if="createLink">
+      {{topicsList.sprintUrl}}<br>
+    </li>
+    </STRONG>
+  </ul>
+</div>
+
 <div ng-controller="TopicsController as topicsList" align="center">
   <div id="addtopics" class="pageTitle" align="center">
     <h2>Add survey topics</h2>
@@ -19,20 +42,9 @@
      {{topic.text}} 
     </li>
   </ul>
-  <div ng-controller="TopicsController">
-   <input type="button" ng-if="topicsAdded" value="Create survey link" ng-click="topicsList.create()" ng-model="createLink">
-  <ul>
-    <STRONG><br>
-      <!-- shows link soon as it is created -->
-    <li ng-if="createLink">
-      {{topicsList.sprintUrl}}<br>
-    </li>
-    </STRONG>
-  </ul>
   <!-- shows results button once link is created -->
   <div align="center" ng-if="createLink">
   <input ng-controller="ResultsController as resultsList" type="button" value="View results" ng-click="resultsList.viewResults()">
-</div>
 </div>
 <br>
 <div align="center" ng-controller="ResultsController as resultsList">
