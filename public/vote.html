@@ -1,13 +1,14 @@
 <!-- Voting page -->
 <div align= "center">
   <div class="pageTitle">
-    <h2>HOW DID THAT MAKE YOU FEEL?</h2>
+    <h2>Place votes below</h2>
   </div>
   <!-- Controller for voting -->
   <center ng-controller="VotesController as votesList">
     <form>
       <ul>
       <!-- Displays the topic to vote on -->
+      <h4>*Bad -------- Good*</h4>
         <li ng-repeat="item in votesList.topics">
           {{ item.text }}
           <div></div>
@@ -19,10 +20,7 @@
         <!-- This button will post your votes to the database -->
         <input type="button" style="float:center" ng-click="votesList.check()" value="VOTE!">
         <!-- This will navigate to the results view, showing the results of all the voting -->
-        <!-- <div class="cta" style="float:right;"ng-click="">RESULTS</div>  -->
       </div>
-
-
     </form>
   </center>
 </div>
