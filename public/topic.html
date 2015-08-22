@@ -1,24 +1,55 @@
 <!-- This is the page is where topics are created -->
   <!-- The leader will have the opportunity do delete/combine topics -->
-<div ng-controller="TopicsController as topicsList">
-  <div class="pageTitle">
-    Share this reflection: {{topicsList.sprintUrl}}
-    <h2>ENTER DISCUSSION SUGGESTIONS</h2>
+<!--     <div align="center" ng-controller="TopicsController">
+      <br>
+   <input type="button" value="Create survey link" ng-click="topicsList.create()" ng-model="createLink">
+  
+</div> -->
+
+<!-- on page load, a link will be generated -->
+<div align="center" ng-controller="TopicsController as topicsList" ng-init="topicsList.create()">
+  <h3>
+    <STRONG>
+      Link generated for this survey
+    </STRONG>
+  </h3>
+<ul>
+    <STRONG>
+      <!-- shows link soon as it is created -->
+    <li ng-if="createLink">
+      {{topicsList.sprintUrl}}<br>
+    </li>
+    </STRONG>
+  </ul>
+</div>
+
+<div ng-controller="TopicsController as topicsList" align="center">
+  <div id="addtopics" class="pageTitle" align="center">
+    <h2>Add survey topics</h2>
   </div>
   <!-- The form to enter topics -->
-  <form ng-submit="topicsList.addTopic()" class="topicForm"> 
-    <input type="text" required ng-model="topicsList.topicText" maxlength="24"  class="textInput" placeholder="Enter a topic">
-    <div></div>
-    <!-- Click to post a topic -->
-    <input style="visibility: hidden;" class="btn-primary" type="submit" value="add">
+  <form name="kahsey" ng-submit="topicsList.addTopic()" class="topicForm" > 
+    <input type="text" size="27" ng-model="topicsList.topicText" maxlength="24" class="textInput" placeholder="Enter a topic" ng-model="input" required />
+  <div>
+    <br>
+    <input class="btn-primary" type="submit" value="add" ng-disabled="kaysey.$invalid || kahsey.$pending">
+  </div>
   </form>
-    
+  <br>
   <ul>
+    <!-- displays topics -->
    <li ng-repeat="topic in topicsList.topics">
      {{topic.text}} 
     </li>
   </ul>
-  <div class="cta" ng-click="topicsList.startVote()">VOTE!</div>
-</div>
-  
+  <!-- shows results button once link is created -->
 
+<br>
+  <div align="center" ng-if="showResultsButton">
+  <input ng-controller="ResultsController as resultsList" type="button" value="View results" ng-click="resultsList.viewResults()">
+</div>
+<br>
+</div>
+<div align="center" ng-controller="ResultsController as resultsList">
+  <input type="button" value="Reset" ng-click="resultsList.restart()">
+</div>

@@ -2,13 +2,16 @@
 // for querying the database to insert and retrieve topic and vote data
 
 // The project uses a node server with express and a Postgres database to store data
-var express = require('express'),
+ var express = require('express'),
 serveStatic = require('serve-static'),
-pg = require('pg'), 
+pg = require('pg'),
 morgan = require('morgan'),
 bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.json());
+var url = require('url')
+
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Listen for an environment port
@@ -46,7 +49,7 @@ app.get('/api/topics', function(req, res){
 // querying votes
 app.post('/api/topics', function(req, res){
   var rows = []; // Array to hold values returned from database
-
+   url.parse(req.url).query
   // Grab data from http request
   var data = {text: req.body.text};
 
@@ -54,6 +57,7 @@ app.post('/api/topics', function(req, res){
   pg.connect(connectionString, function(err, client, done){
 
     // Insert topics into table
+
     client.query('INSERT INTO topics (text, vote) values ($1, $2)', [data.text, 0]);
 
     // Retrieves inserted values from database
@@ -66,6 +70,7 @@ app.post('/api/topics', function(req, res){
     });
     query.on('end', function(result) {
       client.end();
+      console.log(result)
       return res.json(rows);
     });
 
@@ -101,18 +106,26 @@ app.post('/api/votes', function(req, res){
   for (var i = 0; i < req.body.length; i++){
     data[i] = {text: req.body[i].text, vote: req.body[i].vote};
   }
+
   pg.connect(connectionString, function(err, client, done){
 
     for (var i = 0; i < data.length; i++) {
-      client.query('INSERT INTO topics (text, vote) values ($1, $2)', [data[i].text, data[i].vote]);
-    }
+      //select in table topics in column text the value with data[i] text
+      //replace that row's vote value to data[i].vote
+
+
+      client.query('UPDATE topics SET vote=$2 WHERE text=$1',[data[i].text, data[i].vote]);}
+
     var query = client.query("SELECT text FROM topics ORDER BY id ASC");
+    
     if (err) {
       return console.error('error running query', err);
     }
+
     query.on('row', function(row) {
       rows.push(row);
     });
+
     query.on('end', function(result) {
       client.end();
       return res.json(rows);

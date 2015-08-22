@@ -1,21 +1,67 @@
-<!doctype html>
-<!-- Initial view and placeholder for all the libraries that will be used -->
-<html>
-  <head>
-    <title>REFLECTIV</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-  </head>
+<!DOCTYPE HTML>
 
-  <body ng-app="Reflectiv">
-    <header>
-      <a href="#/" class="header">
-        <img src="assets/reflectiv.png" width="100" alt="reflectiv">REFLECTIV
-      </a>
-    </header>
-    <div ng-view></div>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.min.js"></script>
-    <script src="reflectiv.js"></script>
-  
-  </body>
-</html>
+<html>
+<head>
+	<title>Reflectiv</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="index" ng-app="Reflectiv">
+	<div id="page-wrapper">
+		<!-- Header -->
+		<header id="header" class="alt">
+			<h1 id="logo"><a href="#/">REFLECTIV </a></h1>
+		</header>
+		<!-- Banner -->
+		<section id="banner">
+
+					<!--
+						".inner" is set up as an inline-block so it automatically expands
+						in both directions to fit whatever's inside it. This means it won't
+						automatically wrap lines, so be sure to use line breaks where
+						appropriate (<br />).
+					-->
+					<div class="inner">
+
+						<header>
+							<h2 class="base">REFLECTIV</h2>
+							<h2 class="mirror">REFLECTIV</h2>
+						</header>
+						<p>An easier way to <strong>take surveys</strong>
+						</p>
+					</div>
+
+        </section>
+		    <article id="#main">
+          <article>
+            <article>
+              <div ng-view></div>            
+            </article>
+          </article>
+        </article>
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://github.com/AdventuresomeBamboo/colorful-asteroid" class="icon circle fa-github"><span class="label">Github</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>Design: <a href="https://github.com/AdventuresomeBamboo/colorful-asteroid">TGA- Adventuresome Bamboo</a></li>
+						</ul>
+					</footer>
+				</div>
+				<!-- Scripts -->
+				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.min.js"></script>
+				<script src="reflectiv.js"></script>
+				<script src="assets/js/jquery.min.js"></script>
+				<script src="assets/js/jquery.dropotron.min.js"></script>
+				<script src="assets/js/jquery.scrolly.min.js"></script>
+				<script src="assets/js/jquery.scrollgress.min.js"></script>
+				<script src="assets/js/skel.min.js"></script>
+				<script src="assets/js/util.js"></script>
+				<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+				<script src="assets/js/main.js"></script>
+				<link rel="shortcut icon" href="/favicon.ico">
+			</body>
+			</html>
