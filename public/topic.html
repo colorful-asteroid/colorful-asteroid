@@ -43,11 +43,13 @@
     </li>
   </ul>
   <!-- shows results button once link is created -->
-  <div align="center" ng-if="createLink">
+
+<br>
+  <div align="center" ng-if="showResultsButton">
   <input ng-controller="ResultsController as resultsList" type="button" value="View results" ng-click="resultsList.viewResults()">
 </div>
 <br>
+</div>
 <div align="center" ng-controller="ResultsController as resultsList">
   <input type="button" value="Reset" ng-click="resultsList.restart()">
-</div>
 </div>
