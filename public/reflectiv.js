@@ -16,7 +16,10 @@ angular.module('Reflectiv', ['ngRoute'])
   })
 .when('/topic/:id/results', {
     templateUrl: 'results.html' // serves results view
-  });
+  })
+.when('/voted', {
+  templateUrl: 'voted.html'
+});
 }])
 
 .controller('TopicsController', function($scope, $location, $http, Sprint){ // injects location, http, sprint
@@ -110,6 +113,7 @@ angular.module('Reflectiv', ['ngRoute'])
       if(votesList.topics.every(checkVotes)){
         console.log(Sprint.table)
         vote();
+        $location.path('/voted')
       };
       // checks if every topic has been voted on
       if(!votesList.topics.every(checkVotes)){
