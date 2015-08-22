@@ -49,6 +49,7 @@ angular.module('Reflectiv', ['ngRoute'])
 
   topicsList.addTopic = function(){
     var container = {};
+    $scope.showResultsButton = true;
     for(var i =0; i<topicsList.topics.length; i++){
       container[topicsList.topics[i]["text"]] = true
     }
@@ -109,7 +110,6 @@ angular.module('Reflectiv', ['ngRoute'])
       if(votesList.topics.every(checkVotes)){
         console.log(Sprint.table)
         vote();
-        $location.path('/topic/' + Sprint.table + '/results');
       };
       // checks if every topic has been voted on
       if(!votesList.topics.every(checkVotes)){
@@ -135,9 +135,6 @@ angular.module('Reflectiv', ['ngRoute'])
           return currentValue.vote > 0;
         };
 
-        votesList.viewResults = function(){
-      $location.path('/topic/' + Sprint.table + '/results'); // navigates to results view
-    };  
   })
 
 .controller('ResultsController', function($scope, $location, $http, Sprint){ // injects location, http
